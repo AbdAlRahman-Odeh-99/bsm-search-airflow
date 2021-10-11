@@ -1,0 +1,43 @@
+[2021-10-10 17:23:42,424] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.generate_group_data.generate_data_4 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:23:42,431] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.generate_group_data.generate_data_4 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:23:42,431] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:23:42,431] {taskinstance.py:1096} INFO - Starting attempt 2 of 2
+[2021-10-10 17:23:42,431] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:23:42,439] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): data.generate_group_data.generate_data_4> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:23:42,441] {standard_task_runner.py:52} INFO - Started process 20597 to run task
+[2021-10-10 17:23:42,444] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'data.generate_group_data.generate_data_4', '2021-10-09T00:00:00+00:00', '--job-id', '598', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp2rpewqbl', '--error-file', '/tmp/tmp666cezs0']
+[2021-10-10 17:23:42,444] {standard_task_runner.py:77} INFO - Job 598: Subtask data.generate_group_data.generate_data_4
+[2021-10-10 17:23:42,467] {logging_mixin.py:109} INFO - Running <TaskInstance: main.data.generate_group_data.generate_data_4 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:23:42,492] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=data.generate_group_data.generate_data_4
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:23:42,493] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 17:23:42,493] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 17:23:42,498] {subprocess.py:74} INFO - Output:
+[2021-10-10 17:23:42,499] {subprocess.py:78} INFO - + source /home/abd/root/root-6.24.06-install/bin/thisroot.sh
+[2021-10-10 17:23:42,499] {subprocess.py:78} INFO - bash: line 2: /home/abd/root/root-6.24.06-install/bin/thisroot.sh: No such file or directory
+[2021-10-10 17:23:42,499] {subprocess.py:78} INFO - + pwd
+[2021-10-10 17:23:42,499] {subprocess.py:78} INFO - /tmp/airflowtmpw9ssusha
+[2021-10-10 17:23:42,499] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py data 20000 /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 17:23:42,506] {subprocess.py:78} INFO - python: can't open file '/home/abd/airflow/code/generatetuple.py': [Errno 2] No such file or directory
+[2021-10-10 17:23:42,506] {subprocess.py:82} INFO - Command exited with return code 2
+[2021-10-10 17:23:42,511] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 17:23:42,512] {taskinstance.py:1506} INFO - Marking task as FAILED. dag_id=main, task_id=data.generate_group_data.generate_data_4, execution_date=20211009T000000, start_date=20211010T142342, end_date=20211010T142342
+[2021-10-10 17:23:42,535] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 17:23:42,545] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

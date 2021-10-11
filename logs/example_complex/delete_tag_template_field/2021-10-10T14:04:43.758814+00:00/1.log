@@ -1,0 +1,27 @@
+[2021-10-10 17:09:05,720] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_complex.delete_tag_template_field 2021-10-10T14:04:43.758814+00:00 [queued]>
+[2021-10-10 17:09:05,727] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_complex.delete_tag_template_field 2021-10-10T14:04:43.758814+00:00 [queued]>
+[2021-10-10 17:09:05,727] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:09:05,727] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2021-10-10 17:09:05,727] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:09:05,734] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): delete_tag_template_field> on 2021-10-10T14:04:43.758814+00:00
+[2021-10-10 17:09:05,735] {standard_task_runner.py:52} INFO - Started process 16604 to run task
+[2021-10-10 17:09:05,738] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'example_complex', 'delete_tag_template_field', '2021-10-10T14:04:43.758814+00:00', '--job-id', '174', '--pool', 'default_pool', '--raw', '--subdir', '/usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_complex.py', '--cfg-path', '/tmp/tmp466p3hiq', '--error-file', '/tmp/tmpn17uld2b']
+[2021-10-10 17:09:05,739] {standard_task_runner.py:77} INFO - Job 174: Subtask delete_tag_template_field
+[2021-10-10 17:09:05,757] {logging_mixin.py:109} INFO - Running <TaskInstance: example_complex.delete_tag_template_field 2021-10-10T14:04:43.758814+00:00 [running]> on host abd
+[2021-10-10 17:09:05,784] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=example_complex
+AIRFLOW_CTX_TASK_ID=delete_tag_template_field
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-10T14:04:43.758814+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-10-10T14:04:43.758814+00:00
+[2021-10-10 17:09:05,784] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 17:09:05,784] {subprocess.py:63} INFO - Running command: ['bash', '-c', 'echo delete_tag_template_field']
+[2021-10-10 17:09:05,789] {subprocess.py:74} INFO - Output:
+[2021-10-10 17:09:05,789] {subprocess.py:78} INFO - delete_tag_template_field
+[2021-10-10 17:09:05,790] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 17:09:05,802] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=example_complex, task_id=delete_tag_template_field, execution_date=20211010T140443, start_date=20211010T140905, end_date=20211010T140905
+[2021-10-10 17:09:05,829] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:09:05,842] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check

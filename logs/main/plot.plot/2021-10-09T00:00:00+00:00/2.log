@@ -1,0 +1,630 @@
+[2021-10-10 17:38:32,785] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:38:32,791] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:38:32,791] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:38:32,791] {taskinstance.py:1096} INFO - Starting attempt 2 of 2
+[2021-10-10 17:38:32,791] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:38:32,799] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): plot.plot> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:38:32,800] {standard_task_runner.py:52} INFO - Started process 28376 to run task
+[2021-10-10 17:38:32,803] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'plot.plot', '2021-10-09T00:00:00+00:00', '--job-id', '618', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpfg2154xd', '--error-file', '/tmp/tmpo0hqg9zt']
+[2021-10-10 17:38:32,803] {standard_task_runner.py:77} INFO - Job 618: Subtask plot.plot
+[2021-10-10 17:38:32,823] {logging_mixin.py:109} INFO - Running <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:38:32,845] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=plot.plot
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:38:32,845] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 17:38:32,845] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            hfquickplot write-vardef ${base_dir}/${combined_model} combined ${base_dir}/${nominal_vals}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${nominal_vals} -c qcd,mc2,mc1,signal -o ${base_dir}/${prefit_plot}\n            hfquickplot fit ${base_dir}/${combined_model} combined ${base_dir}/${fit_results}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${fit_results} -c qcd,mc2,mc1,signal -o ${base_dir}/${postfit_plot}\n        ']
+[2021-10-10 17:38:32,849] {subprocess.py:74} INFO - Output:
+[2021-10-10 17:38:32,850] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:38:32,850] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 17:38:32,850] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:38:32,851] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 17:38:32,851] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 17:38:32,851] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:38:32,851] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 17:38:32,852] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 17:38:32,853] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 17:38:32,854] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 17:38:32,855] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 17:38:32,855] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 17:38:32,855] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 17:38:32,864] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - + hfquickplot write-vardef /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/nominal_vals.yml
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - bash: line 3: hfquickplot: command not found
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/nominal_vals.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/prefit.pdf
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - bash: line 4: hfquickplot: command not found
+[2021-10-10 17:38:32,865] {subprocess.py:78} INFO - + hfquickplot fit /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/fit_results.yml
+[2021-10-10 17:38:32,866] {subprocess.py:78} INFO - bash: line 5: hfquickplot: command not found
+[2021-10-10 17:38:32,866] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/fit_results.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/postfit.pdf
+[2021-10-10 17:38:32,866] {subprocess.py:78} INFO - bash: line 6: hfquickplot: command not found
+[2021-10-10 17:38:32,866] {subprocess.py:82} INFO - Command exited with return code 127
+[2021-10-10 17:38:32,871] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 17:38:32,872] {taskinstance.py:1506} INFO - Marking task as FAILED. dag_id=main, task_id=plot.plot, execution_date=20211009T000000, start_date=20211010T143832, end_date=20211010T143832
+[2021-10-10 17:38:32,894] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 17:38:32,903] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:43:14,745] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:43:14,751] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:43:14,752] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:43:14,752] {taskinstance.py:1096} INFO - Starting attempt 2 of 2
+[2021-10-10 19:43:14,752] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:43:14,759] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): plot.plot> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:43:14,761] {standard_task_runner.py:52} INFO - Started process 58658 to run task
+[2021-10-10 19:43:14,764] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'plot.plot', '2021-10-09T00:00:00+00:00', '--job-id', '618', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp8oifuvxn', '--error-file', '/tmp/tmpm9cdbbs7']
+[2021-10-10 19:43:14,764] {standard_task_runner.py:77} INFO - Job 618: Subtask plot.plot
+[2021-10-10 19:43:14,783] {logging_mixin.py:109} INFO - Running <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:43:14,805] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=plot.plot
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:43:14,805] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:43:14,806] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            hfquickplot write-vardef ${base_dir}/${combined_model} combined ${base_dir}/${nominal_vals}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${nominal_vals} -c qcd,mc2,mc1,signal -o ${base_dir}/${prefit_plot}\n            hfquickplot fit ${base_dir}/${combined_model} combined ${base_dir}/${fit_results}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${fit_results} -c qcd,mc2,mc1,signal -o ${base_dir}/${postfit_plot}\n        ']
+[2021-10-10 19:43:14,809] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:43:14,810] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:43:14,811] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:43:14,811] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:43:14,811] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:43:14,811] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:43:14,811] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:43:14,811] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:43:14,812] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:43:14,813] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:43:14,814] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:43:14,815] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:43:14,824] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:43:14,824] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:43:14,824] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:43:14,824] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:43:14,824] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:43:14,824] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:43:14,824] {subprocess.py:78} INFO - + hfquickplot write-vardef /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/nominal_vals.yml
+[2021-10-10 19:43:14,824] {subprocess.py:78} INFO - bash: line 3: hfquickplot: command not found
+[2021-10-10 19:43:14,825] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/nominal_vals.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/prefit.pdf
+[2021-10-10 19:43:14,825] {subprocess.py:78} INFO - bash: line 4: hfquickplot: command not found
+[2021-10-10 19:43:14,825] {subprocess.py:78} INFO - + hfquickplot fit /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/fit_results.yml
+[2021-10-10 19:43:14,825] {subprocess.py:78} INFO - bash: line 5: hfquickplot: command not found
+[2021-10-10 19:43:14,825] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/fit_results.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/postfit.pdf
+[2021-10-10 19:43:14,825] {subprocess.py:78} INFO - bash: line 6: hfquickplot: command not found
+[2021-10-10 19:43:14,826] {subprocess.py:82} INFO - Command exited with return code 127
+[2021-10-10 19:43:14,830] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 19:43:14,831] {taskinstance.py:1506} INFO - Marking task as FAILED. dag_id=main, task_id=plot.plot, execution_date=20211009T000000, start_date=20211010T164314, end_date=20211010T164314
+[2021-10-10 19:43:14,855] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 19:43:14,881] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:52:49,006] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:52:49,013] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:52:49,013] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:52:49,014] {taskinstance.py:1096} INFO - Starting attempt 2 of 2
+[2021-10-10 19:52:49,014] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:52:49,020] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): plot.plot> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:52:49,022] {standard_task_runner.py:52} INFO - Started process 62033 to run task
+[2021-10-10 19:52:49,025] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'plot.plot', '2021-10-09T00:00:00+00:00', '--job-id', '618', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp3giv5wxd', '--error-file', '/tmp/tmpu22ogvdh']
+[2021-10-10 19:52:49,025] {standard_task_runner.py:77} INFO - Job 618: Subtask plot.plot
+[2021-10-10 19:52:49,048] {logging_mixin.py:109} INFO - Running <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:52:49,072] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=plot.plot
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:52:49,073] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:52:49,073] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            hfquickplot write-vardef ${base_dir}/${combined_model} combined ${base_dir}/${nominal_vals}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${nominal_vals} -c qcd,mc2,mc1,signal -o ${base_dir}/${prefit_plot}\n            hfquickplot fit ${base_dir}/${combined_model} combined ${base_dir}/${fit_results}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${fit_results} -c qcd,mc2,mc1,signal -o ${base_dir}/${postfit_plot}\n        ']
+[2021-10-10 19:52:49,077] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:52:49,078] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:52:49,078] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:52:49,079] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:52:49,079] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:52:49,079] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:52:49,079] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:52:49,079] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:52:49,080] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:52:49,081] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:52:49,081] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:52:49,081] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:52:49,081] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:52:49,082] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:52:49,083] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:52:49,083] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:52:49,083] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:52:49,083] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:52:49,083] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:52:49,083] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:52:49,083] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:52:49,083] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - + hfquickplot write-vardef /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/nominal_vals.yml
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - bash: line 3: hfquickplot: command not found
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/nominal_vals.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/prefit.pdf
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - bash: line 4: hfquickplot: command not found
+[2021-10-10 19:52:49,095] {subprocess.py:78} INFO - + hfquickplot fit /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/fit_results.yml
+[2021-10-10 19:52:49,096] {subprocess.py:78} INFO - bash: line 5: hfquickplot: command not found
+[2021-10-10 19:52:49,096] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/fit_results.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/postfit.pdf
+[2021-10-10 19:52:49,096] {subprocess.py:78} INFO - bash: line 6: hfquickplot: command not found
+[2021-10-10 19:52:49,096] {subprocess.py:82} INFO - Command exited with return code 127
+[2021-10-10 19:52:49,101] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 19:52:49,102] {taskinstance.py:1506} INFO - Marking task as FAILED. dag_id=main, task_id=plot.plot, execution_date=20211009T000000, start_date=20211010T165249, end_date=20211010T165249
+[2021-10-10 19:52:49,116] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 19:52:49,125] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:02:39,953] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:02:39,960] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:02:39,960] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:02:39,960] {taskinstance.py:1096} INFO - Starting attempt 2 of 2
+[2021-10-10 20:02:39,961] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:02:39,968] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): plot.plot> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:02:39,969] {standard_task_runner.py:52} INFO - Started process 65554 to run task
+[2021-10-10 20:02:39,972] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'plot.plot', '2021-10-09T00:00:00+00:00', '--job-id', '619', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpz7w9lt4d', '--error-file', '/tmp/tmpv5dlhl75']
+[2021-10-10 20:02:39,973] {standard_task_runner.py:77} INFO - Job 619: Subtask plot.plot
+[2021-10-10 20:02:39,992] {logging_mixin.py:109} INFO - Running <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:02:40,014] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=plot.plot
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:02:40,014] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:02:40,015] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            hfquickplot write-vardef ${base_dir}/${combined_model} combined ${base_dir}/${nominal_vals}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${nominal_vals} -c qcd,mc2,mc1,signal -o ${base_dir}/${prefit_plot}\n            hfquickplot fit ${base_dir}/${combined_model} combined ${base_dir}/${fit_results}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${fit_results} -c qcd,mc2,mc1,signal -o ${base_dir}/${postfit_plot}\n        ']
+[2021-10-10 20:02:40,019] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:02:40,019] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:02:40,020] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:02:40,020] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:02:40,020] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:02:40,020] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:02:40,020] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:02:40,021] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:02:40,022] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:02:40,023] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:02:40,024] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:02:40,024] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:02:40,024] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:02:40,024] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:02:40,024] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:02:40,033] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - + hfquickplot write-vardef /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/nominal_vals.yml
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - bash: line 3: hfquickplot: command not found
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/nominal_vals.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/prefit.pdf
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - bash: line 4: hfquickplot: command not found
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - + hfquickplot fit /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/fit_results.yml
+[2021-10-10 20:02:40,034] {subprocess.py:78} INFO - bash: line 5: hfquickplot: command not found
+[2021-10-10 20:02:40,035] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/fit_results.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/postfit.pdf
+[2021-10-10 20:02:40,035] {subprocess.py:78} INFO - bash: line 6: hfquickplot: command not found
+[2021-10-10 20:02:40,035] {subprocess.py:82} INFO - Command exited with return code 127
+[2021-10-10 20:02:40,040] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 20:02:40,041] {taskinstance.py:1506} INFO - Marking task as FAILED. dag_id=main, task_id=plot.plot, execution_date=20211009T000000, start_date=20211010T170239, end_date=20211010T170240
+[2021-10-10 20:02:40,064] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 20:02:40,073] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:24:11,343] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:24:11,351] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:24:11,351] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:24:11,351] {taskinstance.py:1096} INFO - Starting attempt 2 of 2
+[2021-10-10 20:24:11,351] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:24:11,357] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): plot.plot> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:24:11,358] {standard_task_runner.py:52} INFO - Started process 12600 to run task
+[2021-10-10 20:24:11,361] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'plot.plot', '2021-10-09T00:00:00+00:00', '--job-id', '620', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpjyo1y7wb', '--error-file', '/tmp/tmpq0cd4fkx']
+[2021-10-10 20:24:11,362] {standard_task_runner.py:77} INFO - Job 620: Subtask plot.plot
+[2021-10-10 20:24:11,381] {logging_mixin.py:109} INFO - Running <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:24:11,403] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=plot.plot
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:24:11,403] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:24:11,403] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            hfquickplot write-vardef ${base_dir}/${combined_model} combined ${base_dir}/${nominal_vals}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${nominal_vals} -c qcd,mc2,mc1,signal -o ${base_dir}/${prefit_plot}\n            hfquickplot fit ${base_dir}/${combined_model} combined ${base_dir}/${fit_results}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${fit_results} -c qcd,mc2,mc1,signal -o ${base_dir}/${postfit_plot}\n        ']
+[2021-10-10 20:24:11,407] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:24:11,408] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:24:11,408] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:24:11,408] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:24:11,408] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:24:11,408] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:24:11,408] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,409] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:24:11,410] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:24:11,410] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:24:11,410] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:24:11,410] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:24:11,410] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:24:11,411] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:24:11,412] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:24:11,412] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:24:11,412] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:24:11,412] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:24:11,412] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:24:11,412] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:24:11,412] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:24:11,421] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - + hfquickplot write-vardef /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/nominal_vals.yml
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - bash: line 3: hfquickplot: command not found
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/nominal_vals.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/prefit.pdf
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - bash: line 4: hfquickplot: command not found
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - + hfquickplot fit /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/fit_results.yml
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - bash: line 5: hfquickplot: command not found
+[2021-10-10 20:24:11,422] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/fit_results.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/postfit.pdf
+[2021-10-10 20:24:11,423] {subprocess.py:78} INFO - bash: line 6: hfquickplot: command not found
+[2021-10-10 20:24:11,423] {subprocess.py:82} INFO - Command exited with return code 127
+[2021-10-10 20:24:11,427] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 20:24:11,428] {taskinstance.py:1506} INFO - Marking task as FAILED. dag_id=main, task_id=plot.plot, execution_date=20211009T000000, start_date=20211010T172411, end_date=20211010T172411
+[2021-10-10 20:24:11,452] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 20:24:11,461] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:43:35,061] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:43:35,068] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:43:35,068] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:43:35,068] {taskinstance.py:1096} INFO - Starting attempt 2 of 2
+[2021-10-10 20:43:35,068] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:43:35,075] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): plot.plot> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:43:35,076] {standard_task_runner.py:52} INFO - Started process 16645 to run task
+[2021-10-10 20:43:35,079] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'plot.plot', '2021-10-09T00:00:00+00:00', '--job-id', '620', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpfe9z1tfn', '--error-file', '/tmp/tmpvq7pguvx']
+[2021-10-10 20:43:35,080] {standard_task_runner.py:77} INFO - Job 620: Subtask plot.plot
+[2021-10-10 20:43:35,099] {logging_mixin.py:109} INFO - Running <TaskInstance: main.plot.plot 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:43:35,124] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=plot.plot
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:43:35,124] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:43:35,125] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            hfquickplot write-vardef ${base_dir}/${combined_model} combined ${base_dir}/${nominal_vals}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${nominal_vals} -c qcd,mc2,mc1,signal -o ${base_dir}/${prefit_plot}\n            hfquickplot fit ${base_dir}/${combined_model} combined ${base_dir}/${fit_results}\n            hfquickplot plot-channel ${base_dir}/${combined_model} combined channel1 x ${base_dir}/${fit_results} -c qcd,mc2,mc1,signal -o ${base_dir}/${postfit_plot}\n        ']
+[2021-10-10 20:43:35,129] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:43:35,130] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:43:35,130] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:43:35,130] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:43:35,130] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:43:35,130] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:43:35,130] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:43:35,131] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:43:35,131] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:43:35,131] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:43:35,131] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:43:35,132] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:43:35,132] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:43:35,132] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:43:35,132] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,132] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:43:35,132] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:43:35,132] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,133] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:43:35,134] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:43:35,144] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:43:35,144] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:43:35,144] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:43:35,144] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:43:35,144] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:43:35,144] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:43:35,144] {subprocess.py:78} INFO - + hfquickplot write-vardef /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/nominal_vals.yml
+[2021-10-10 20:43:35,144] {subprocess.py:78} INFO - bash: line 3: hfquickplot: command not found
+[2021-10-10 20:43:35,145] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/nominal_vals.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/prefit.pdf
+[2021-10-10 20:43:35,145] {subprocess.py:78} INFO - bash: line 4: hfquickplot: command not found
+[2021-10-10 20:43:35,145] {subprocess.py:78} INFO - + hfquickplot fit /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined /home/abd/airflow/data/bsm-search/fit_results.yml
+[2021-10-10 20:43:35,145] {subprocess.py:78} INFO - bash: line 5: hfquickplot: command not found
+[2021-10-10 20:43:35,145] {subprocess.py:78} INFO - + hfquickplot plot-channel /home/abd/airflow/data/bsm-search/results_combined_meas_model.root combined channel1 x /home/abd/airflow/data/bsm-search/fit_results.yml -c qcd,mc2,mc1,signal -o /home/abd/airflow/data/bsm-search/postfit.pdf
+[2021-10-10 20:43:35,145] {subprocess.py:78} INFO - bash: line 6: hfquickplot: command not found
+[2021-10-10 20:43:35,146] {subprocess.py:82} INFO - Command exited with return code 127
+[2021-10-10 20:43:35,150] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 20:43:35,152] {taskinstance.py:1506} INFO - Marking task as FAILED. dag_id=main, task_id=plot.plot, execution_date=20211009T000000, start_date=20211010T174335, end_date=20211010T174335
+[2021-10-10 20:43:35,170] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 20:43:35,178] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

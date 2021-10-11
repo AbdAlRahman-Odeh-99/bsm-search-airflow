@@ -1,0 +1,23 @@
+[2021-10-10 17:08:03,929] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_kubernetes_executor.four_task 2021-10-10T14:05:16.534072+00:00 [queued]>
+[2021-10-10 17:08:03,934] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_kubernetes_executor.four_task 2021-10-10T14:05:16.534072+00:00 [queued]>
+[2021-10-10 17:08:03,934] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:08:03,934] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2021-10-10 17:08:03,934] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:08:03,943] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): four_task> on 2021-10-10T14:05:16.534072+00:00
+[2021-10-10 17:08:03,944] {standard_task_runner.py:52} INFO - Started process 16196 to run task
+[2021-10-10 17:08:03,992] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'example_kubernetes_executor', 'four_task', '2021-10-10T14:05:16.534072+00:00', '--job-id', '121', '--pool', 'default_pool', '--raw', '--subdir', '/usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_kubernetes_executor.py', '--cfg-path', '/tmp/tmprgwpdo4x', '--error-file', '/tmp/tmp7zardke_']
+[2021-10-10 17:08:03,992] {standard_task_runner.py:77} INFO - Job 121: Subtask four_task
+[2021-10-10 17:08:04,014] {logging_mixin.py:109} INFO - Running <TaskInstance: example_kubernetes_executor.four_task 2021-10-10T14:05:16.534072+00:00 [running]> on host abd
+[2021-10-10 17:08:04,034] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=example_kubernetes_executor
+AIRFLOW_CTX_TASK_ID=four_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-10T14:05:16.534072+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-10-10T14:05:16.534072+00:00
+[2021-10-10 17:08:04,034] {logging_mixin.py:109} INFO - annotated!
+[2021-10-10 17:08:04,034] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 17:08:04,039] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=example_kubernetes_executor, task_id=four_task, execution_date=20211010T140516, start_date=20211010T140803, end_date=20211010T140804
+[2021-10-10 17:08:04,078] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:08:04,121] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

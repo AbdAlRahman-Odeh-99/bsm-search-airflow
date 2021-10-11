@@ -1,0 +1,176 @@
+[2021-10-10 17:18:24,534] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:18:24,541] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:18:24,541] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:18:24,541] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 17:18:24,541] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:18:24,549] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): mc.mc1.scatter_group_mc1.scatter_mc1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:18:24,551] {standard_task_runner.py:52} INFO - Started process 19744 to run task
+[2021-10-10 17:18:24,554] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.scatter_group_mc1.scatter_mc1', '2021-10-09T00:00:00+00:00', '--job-id', '568', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp1f2k1wb5', '--error-file', '/tmp/tmpahk7lg8o']
+[2021-10-10 17:18:24,554] {standard_task_runner.py:77} INFO - Job 568: Subtask mc.mc1.scatter_group_mc1.scatter_mc1
+[2021-10-10 17:18:24,576] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:18:24,603] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.scatter_group_mc1.scatter_mc1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:18:24,603] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 17:18:24,606] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.scatter_group_mc1.scatter_mc1, execution_date=20211009T000000, start_date=20211010T141824, end_date=20211010T141824
+[2021-10-10 17:18:24,646] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:18:24,691] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 17:27:52,287] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:27:52,295] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:27:52,295] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:27:52,295] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 17:27:52,295] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:27:52,302] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): mc.mc1.scatter_group_mc1.scatter_mc1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:27:52,303] {standard_task_runner.py:52} INFO - Started process 21490 to run task
+[2021-10-10 17:27:52,307] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.scatter_group_mc1.scatter_mc1', '2021-10-09T00:00:00+00:00', '--job-id', '568', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpf0fo5ab7', '--error-file', '/tmp/tmpmaider8i']
+[2021-10-10 17:27:52,308] {standard_task_runner.py:77} INFO - Job 568: Subtask mc.mc1.scatter_group_mc1.scatter_mc1
+[2021-10-10 17:27:52,329] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:27:52,354] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.scatter_group_mc1.scatter_mc1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:27:52,354] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 17:27:52,358] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.scatter_group_mc1.scatter_mc1, execution_date=20211009T000000, start_date=20211010T142752, end_date=20211010T142752
+[2021-10-10 17:27:52,397] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:27:52,414] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 17:31:28,615] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:31:28,626] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:31:28,627] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:31:28,627] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 17:31:28,627] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:31:28,638] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): mc.mc1.scatter_group_mc1.scatter_mc1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:31:28,640] {standard_task_runner.py:52} INFO - Started process 22109 to run task
+[2021-10-10 17:31:28,643] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.scatter_group_mc1.scatter_mc1', '2021-10-09T00:00:00+00:00', '--job-id', '568', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpxgqwz2_s', '--error-file', '/tmp/tmp1xb3kp8f']
+[2021-10-10 17:31:28,643] {standard_task_runner.py:77} INFO - Job 568: Subtask mc.mc1.scatter_group_mc1.scatter_mc1
+[2021-10-10 17:31:28,677] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:31:28,710] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.scatter_group_mc1.scatter_mc1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:31:28,710] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 17:31:28,715] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.scatter_group_mc1.scatter_mc1, execution_date=20211009T000000, start_date=20211010T143128, end_date=20211010T143128
+[2021-10-10 17:31:28,734] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:31:28,749] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:36:12,791] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:36:12,799] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:36:12,799] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:36:12,799] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:36:12,799] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:36:12,806] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): mc.mc1.scatter_group_mc1.scatter_mc1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:36:12,808] {standard_task_runner.py:52} INFO - Started process 55708 to run task
+[2021-10-10 19:36:12,811] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.scatter_group_mc1.scatter_mc1', '2021-10-09T00:00:00+00:00', '--job-id', '568', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpn6py1imq', '--error-file', '/tmp/tmpi936mm2u']
+[2021-10-10 19:36:12,811] {standard_task_runner.py:77} INFO - Job 568: Subtask mc.mc1.scatter_group_mc1.scatter_mc1
+[2021-10-10 19:36:12,833] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:36:12,858] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.scatter_group_mc1.scatter_mc1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:36:12,858] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 19:36:12,861] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.scatter_group_mc1.scatter_mc1, execution_date=20211009T000000, start_date=20211010T163612, end_date=20211010T163612
+[2021-10-10 19:36:12,902] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:36:12,918] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:45:52,601] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:45:52,609] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:45:52,609] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:45:52,609] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:45:52,610] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:45:52,616] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): mc.mc1.scatter_group_mc1.scatter_mc1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:45:52,617] {standard_task_runner.py:52} INFO - Started process 59009 to run task
+[2021-10-10 19:45:52,620] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.scatter_group_mc1.scatter_mc1', '2021-10-09T00:00:00+00:00', '--job-id', '568', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpxf27hzjy', '--error-file', '/tmp/tmpolibqnva']
+[2021-10-10 19:45:52,621] {standard_task_runner.py:77} INFO - Job 568: Subtask mc.mc1.scatter_group_mc1.scatter_mc1
+[2021-10-10 19:45:52,643] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:45:52,667] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.scatter_group_mc1.scatter_mc1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:45:52,667] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 19:45:52,670] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.scatter_group_mc1.scatter_mc1, execution_date=20211009T000000, start_date=20211010T164552, end_date=20211010T164552
+[2021-10-10 19:45:52,712] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:45:52,743] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:55:44,704] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:55:44,711] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:55:44,712] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:55:44,712] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:55:44,712] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:55:44,722] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): mc.mc1.scatter_group_mc1.scatter_mc1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:55:44,727] {standard_task_runner.py:52} INFO - Started process 62608 to run task
+[2021-10-10 19:55:44,736] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.scatter_group_mc1.scatter_mc1', '2021-10-09T00:00:00+00:00', '--job-id', '569', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpn64tytck', '--error-file', '/tmp/tmp2kgl_0bc']
+[2021-10-10 19:55:44,737] {standard_task_runner.py:77} INFO - Job 569: Subtask mc.mc1.scatter_group_mc1.scatter_mc1
+[2021-10-10 19:55:44,763] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:55:44,788] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.scatter_group_mc1.scatter_mc1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:55:44,788] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 19:55:44,790] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.scatter_group_mc1.scatter_mc1, execution_date=20211009T000000, start_date=20211010T165544, end_date=20211010T165544
+[2021-10-10 19:55:44,826] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:55:44,870] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:17:14,273] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:17:14,280] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:17:14,280] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:17:14,280] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 20:17:14,280] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:17:14,288] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): mc.mc1.scatter_group_mc1.scatter_mc1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:17:14,289] {standard_task_runner.py:52} INFO - Started process 9624 to run task
+[2021-10-10 20:17:14,292] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.scatter_group_mc1.scatter_mc1', '2021-10-09T00:00:00+00:00', '--job-id', '570', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmppxqfjht7', '--error-file', '/tmp/tmpipap6r2q']
+[2021-10-10 20:17:14,292] {standard_task_runner.py:77} INFO - Job 570: Subtask mc.mc1.scatter_group_mc1.scatter_mc1
+[2021-10-10 20:17:14,314] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:17:14,339] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.scatter_group_mc1.scatter_mc1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:17:14,340] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 20:17:14,342] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.scatter_group_mc1.scatter_mc1, execution_date=20211009T000000, start_date=20211010T171714, end_date=20211010T171714
+[2021-10-10 20:17:14,383] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 20:17:14,398] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:36:39,951] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:36:39,962] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:36:39,962] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:36:39,962] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 20:36:39,962] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:36:39,981] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): mc.mc1.scatter_group_mc1.scatter_mc1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:36:39,983] {standard_task_runner.py:52} INFO - Started process 14173 to run task
+[2021-10-10 20:36:39,987] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.scatter_group_mc1.scatter_mc1', '2021-10-09T00:00:00+00:00', '--job-id', '570', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp8dcx242y', '--error-file', '/tmp/tmpivxm757j']
+[2021-10-10 20:36:39,988] {standard_task_runner.py:77} INFO - Job 570: Subtask mc.mc1.scatter_group_mc1.scatter_mc1
+[2021-10-10 20:36:40,023] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.scatter_group_mc1.scatter_mc1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:36:40,052] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.scatter_group_mc1.scatter_mc1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:36:40,053] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 20:36:40,057] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.scatter_group_mc1.scatter_mc1, execution_date=20211009T000000, start_date=20211010T173639, end_date=20211010T173640
+[2021-10-10 20:36:40,083] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 20:36:40,100] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check

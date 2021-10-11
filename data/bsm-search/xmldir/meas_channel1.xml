@@ -1,0 +1,35 @@
+<!--
+This xml file created automatically on: 
+2021-10-10
+-->
+<!DOCTYPE Channel  SYSTEM 'HistFactorySchema.dtd'>  
+
+  <Channel Name="channel1" InputFile="" >
+
+    <Data HistoName="data_nominal" InputFile="/home/abd/airflow/data/bsm-search/all_merged_hist.root" HistoPath=""  /> 
+
+    <StatErrorConfig RelErrorThreshold="0.05" ConstraintType="Poisson" /> 
+
+    <Sample Name="signal"  HistoPath=""  HistoName="signal_nominal"  InputFile="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  NormalizeByTheory="True" >
+      <NormFactor Name="SigXsecOverSM"  Val="1"  High="3"  Low="0"  Const="False"   /> 
+    </Sample>
+
+
+    <Sample Name="qcd"  HistoPath=""  HistoName="qcd_nominal"  InputFile="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  NormalizeByTheory="True" >
+    </Sample>
+
+
+    <Sample Name="mc1"  HistoPath=""  HistoName="mc1_nominal"  InputFile="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  NormalizeByTheory="True" >
+      <HistoSys Name="mc1_weight_var1"  HistoFileLow="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  HistoNameLow="mc1_weight_var1_dn"  HistoPathLow=""  HistoFileHigh="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  HistoNameHigh="mc1_weight_var1_up"  HistoPathHigh=""   /> 
+      <HistoSys Name="mc1_shape_conv"  HistoFileLow="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  HistoNameLow="mc1_shape_conv_dn"  HistoPathLow=""  HistoFileHigh="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  HistoNameHigh="mc1_shape_conv_up"  HistoPathHigh=""   /> 
+    </Sample>
+
+
+    <Sample Name="mc2"  HistoPath=""  HistoName="mc2_nominal"  InputFile="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  NormalizeByTheory="True" >
+      <HistoSys Name="mc2_weight_var1"  HistoFileLow="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  HistoNameLow="mc2_weight_var1_dn"  HistoPathLow=""  HistoFileHigh="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  HistoNameHigh="mc2_weight_var1_up"  HistoPathHigh=""   /> 
+      <HistoSys Name="mc2_shape_conv"  HistoFileLow="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  HistoNameLow="mc2_shape_conv_dn"  HistoPathLow=""  HistoFileHigh="/home/abd/airflow/data/bsm-search/all_merged_hist.root"  HistoNameHigh="mc2_shape_conv_up"  HistoPathHigh=""   /> 
+    </Sample>
+
+
+
+  </Channel>  

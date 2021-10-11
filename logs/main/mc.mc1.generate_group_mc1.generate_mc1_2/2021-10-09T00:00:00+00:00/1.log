@@ -1,0 +1,623 @@
+[2021-10-10 17:18:29,673] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:18:29,680] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:18:29,680] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:18:29,680] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 17:18:29,680] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:18:29,687] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc1.generate_group_mc1.generate_mc1_2> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:18:29,689] {standard_task_runner.py:52} INFO - Started process 19780 to run task
+[2021-10-10 17:18:29,692] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.generate_group_mc1.generate_mc1_2', '2021-10-09T00:00:00+00:00', '--job-id', '573', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp_ye1kk4c', '--error-file', '/tmp/tmp91f5grmv']
+[2021-10-10 17:18:29,692] {standard_task_runner.py:77} INFO - Job 573: Subtask mc.mc1.generate_group_mc1.generate_mc1_2
+[2021-10-10 17:18:29,727] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:18:29,752] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.generate_group_mc1.generate_mc1_2
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:18:29,752] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 17:18:29,752] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 17:18:29,756] {subprocess.py:74} INFO - Output:
+[2021-10-10 17:18:29,757] {subprocess.py:78} INFO - + source /home/abd/root/root-6.24.06-install/bin/thisroot.sh
+[2021-10-10 17:18:29,757] {subprocess.py:78} INFO - bash: line 2: /home/abd/root/root-6.24.06-install/bin/thisroot.sh: No such file or directory
+[2021-10-10 17:18:29,757] {subprocess.py:78} INFO - + pwd
+[2021-10-10 17:18:29,757] {subprocess.py:78} INFO - /tmp/airflowtmphjp0y4at
+[2021-10-10 17:18:29,757] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py mc1 40000 /home/abd/airflow/data/bsm-search/mc1_2.root
+[2021-10-10 17:18:29,764] {subprocess.py:78} INFO - python: can't open file '/home/abd/airflow/code/generatetuple.py': [Errno 2] No such file or directory
+[2021-10-10 17:18:29,764] {subprocess.py:82} INFO - Command exited with return code 2
+[2021-10-10 17:18:29,768] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 17:18:29,769] {taskinstance.py:1506} INFO - Marking task as UP_FOR_RETRY. dag_id=main, task_id=mc.mc1.generate_group_mc1.generate_mc1_2, execution_date=20211009T000000, start_date=20211010T141829, end_date=20211010T141829
+[2021-10-10 17:18:29,782] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 17:18:29,794] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 17:27:57,270] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:27:57,276] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:27:57,276] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:27:57,276] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 17:27:57,276] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:27:57,283] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc1.generate_group_mc1.generate_mc1_2> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:27:57,284] {standard_task_runner.py:52} INFO - Started process 21508 to run task
+[2021-10-10 17:27:57,287] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.generate_group_mc1.generate_mc1_2', '2021-10-09T00:00:00+00:00', '--job-id', '573', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpivn1lub4', '--error-file', '/tmp/tmp7k_8zpyh']
+[2021-10-10 17:27:57,288] {standard_task_runner.py:77} INFO - Job 573: Subtask mc.mc1.generate_group_mc1.generate_mc1_2
+[2021-10-10 17:27:57,307] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:27:57,346] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.generate_group_mc1.generate_mc1_2
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:27:57,346] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 17:27:57,347] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 17:27:57,353] {subprocess.py:74} INFO - Output:
+[2021-10-10 17:27:57,354] {subprocess.py:78} INFO - + source /home/abd/root/root-6.24.06-install/bin/thisroot.sh
+[2021-10-10 17:27:57,354] {subprocess.py:78} INFO - bash: line 2: /home/abd/root/root-6.24.06-install/bin/thisroot.sh: No such file or directory
+[2021-10-10 17:27:57,354] {subprocess.py:78} INFO - + pwd
+[2021-10-10 17:27:57,354] {subprocess.py:78} INFO - /tmp/airflowtmpl02vzgco
+[2021-10-10 17:27:57,354] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py mc1 40000 /home/abd/airflow/data/bsm-search/mc1_2.root
+[2021-10-10 17:27:57,367] {subprocess.py:78} INFO - Traceback (most recent call last):
+[2021-10-10 17:27:57,367] {subprocess.py:78} INFO -   File "/home/abd/airflow/code/generatetuple.py", line 1, in <module>
+[2021-10-10 17:27:57,367] {subprocess.py:78} INFO -     import ROOT
+[2021-10-10 17:27:57,367] {subprocess.py:78} INFO - ImportError: No module named ROOT
+[2021-10-10 17:27:57,369] {subprocess.py:82} INFO - Command exited with return code 1
+[2021-10-10 17:27:57,374] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2021-10-10 17:27:57,375] {taskinstance.py:1506} INFO - Marking task as UP_FOR_RETRY. dag_id=main, task_id=mc.mc1.generate_group_mc1.generate_mc1_2, execution_date=20211009T000000, start_date=20211010T142757, end_date=20211010T142757
+[2021-10-10 17:27:57,419] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 17:27:57,438] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 17:31:37,814] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:31:37,820] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:31:37,821] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:31:37,821] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 17:31:37,821] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:31:37,828] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc1.generate_group_mc1.generate_mc1_2> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:31:37,829] {standard_task_runner.py:52} INFO - Started process 22167 to run task
+[2021-10-10 17:31:37,832] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.generate_group_mc1.generate_mc1_2', '2021-10-09T00:00:00+00:00', '--job-id', '573', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp3qnxfyoz', '--error-file', '/tmp/tmprhdkficv']
+[2021-10-10 17:31:37,833] {standard_task_runner.py:77} INFO - Job 573: Subtask mc.mc1.generate_group_mc1.generate_mc1_2
+[2021-10-10 17:31:37,852] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:31:37,878] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.generate_group_mc1.generate_mc1_2
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:31:37,879] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 17:31:37,879] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 17:31:37,883] {subprocess.py:74} INFO - Output:
+[2021-10-10 17:31:37,883] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:31:37,884] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 17:31:37,884] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:31:37,884] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 17:31:37,884] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 17:31:37,884] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 17:31:37,885] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 17:31:37,886] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 17:31:37,886] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 17:31:37,886] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 17:31:37,886] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 17:31:37,886] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 17:31:37,886] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 17:31:37,886] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,886] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 17:31:37,887] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 17:31:37,888] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 17:31:37,888] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 17:31:37,888] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 17:31:37,888] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 17:31:37,888] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 17:31:37,897] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 17:31:37,897] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 17:31:37,898] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 17:31:37,898] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 17:31:37,898] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 17:31:37,898] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 17:31:37,898] {subprocess.py:78} INFO - + pwd
+[2021-10-10 17:31:37,898] {subprocess.py:78} INFO - /tmp/airflowtmpdxyg3to4
+[2021-10-10 17:31:37,898] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py mc1 40000 /home/abd/airflow/data/bsm-search/mc1_2.root
+[2021-10-10 17:31:38,999] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 17:31:39,012] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.generate_group_mc1.generate_mc1_2, execution_date=20211009T000000, start_date=20211010T143137, end_date=20211010T143139
+[2021-10-10 17:31:39,046] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:31:39,058] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:36:19,355] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:36:19,361] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:36:19,361] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:36:19,361] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:36:19,362] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:36:19,367] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc1.generate_group_mc1.generate_mc1_2> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:36:19,369] {standard_task_runner.py:52} INFO - Started process 55765 to run task
+[2021-10-10 19:36:19,372] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.generate_group_mc1.generate_mc1_2', '2021-10-09T00:00:00+00:00', '--job-id', '573', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmphzds46vt', '--error-file', '/tmp/tmpoc2p6n1e']
+[2021-10-10 19:36:19,372] {standard_task_runner.py:77} INFO - Job 573: Subtask mc.mc1.generate_group_mc1.generate_mc1_2
+[2021-10-10 19:36:19,391] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:36:19,416] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.generate_group_mc1.generate_mc1_2
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:36:19,417] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:36:19,417] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 19:36:19,421] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:36:19,421] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:36:19,422] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:36:19,422] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:36:19,422] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:36:19,422] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:36:19,422] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,423] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:36:19,424] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:36:19,424] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:36:19,424] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:36:19,425] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:36:19,426] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:19,426] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:36:19,426] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:36:19,426] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:36:19,426] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:36:19,426] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:36:19,426] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:36:19,426] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - + pwd
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - /tmp/airflowtmpcf712uwn
+[2021-10-10 19:36:19,436] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py mc1 40000 /home/abd/airflow/data/bsm-search/mc1_2.root
+[2021-10-10 19:36:20,567] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:36:20,579] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.generate_group_mc1.generate_mc1_2, execution_date=20211009T000000, start_date=20211010T163619, end_date=20211010T163620
+[2021-10-10 19:36:20,626] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:36:20,640] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:45:59,220] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:45:59,226] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:45:59,226] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:45:59,226] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:45:59,226] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:45:59,233] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc1.generate_group_mc1.generate_mc1_2> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:45:59,234] {standard_task_runner.py:52} INFO - Started process 59066 to run task
+[2021-10-10 19:45:59,237] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.generate_group_mc1.generate_mc1_2', '2021-10-09T00:00:00+00:00', '--job-id', '573', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpoptelni3', '--error-file', '/tmp/tmpzpa0i234']
+[2021-10-10 19:45:59,238] {standard_task_runner.py:77} INFO - Job 573: Subtask mc.mc1.generate_group_mc1.generate_mc1_2
+[2021-10-10 19:45:59,257] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:45:59,293] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.generate_group_mc1.generate_mc1_2
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:45:59,293] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:45:59,294] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 19:45:59,297] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:45:59,298] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:45:59,299] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:45:59,299] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:45:59,299] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:45:59,299] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:45:59,299] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:45:59,299] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:45:59,300] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:45:59,301] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:45:59,301] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:45:59,301] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:45:59,302] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:45:59,303] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:45:59,303] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:45:59,303] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:45:59,303] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:45:59,303] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:45:59,303] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:45:59,303] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - + pwd
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - /tmp/airflowtmpp5ab10jj
+[2021-10-10 19:45:59,313] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py mc1 40000 /home/abd/airflow/data/bsm-search/mc1_2.root
+[2021-10-10 19:46:00,416] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:46:00,427] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.generate_group_mc1.generate_mc1_2, execution_date=20211009T000000, start_date=20211010T164559, end_date=20211010T164600
+[2021-10-10 19:46:00,452] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:46:00,463] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:55:51,212] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:55:51,218] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:55:51,218] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:55:51,218] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:55:51,218] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:55:51,226] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc1.generate_group_mc1.generate_mc1_2> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:55:51,228] {standard_task_runner.py:52} INFO - Started process 62670 to run task
+[2021-10-10 19:55:51,231] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.generate_group_mc1.generate_mc1_2', '2021-10-09T00:00:00+00:00', '--job-id', '574', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpuqb2l4kp', '--error-file', '/tmp/tmp_apx0lad']
+[2021-10-10 19:55:51,231] {standard_task_runner.py:77} INFO - Job 574: Subtask mc.mc1.generate_group_mc1.generate_mc1_2
+[2021-10-10 19:55:51,251] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:55:51,282] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.generate_group_mc1.generate_mc1_2
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:55:51,283] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:55:51,284] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 19:55:51,290] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:55:51,291] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:55:51,291] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:55:51,291] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:55:51,292] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:55:51,292] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:55:51,292] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:55:51,293] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:55:51,293] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:55:51,293] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:55:51,293] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:55:51,293] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:55:51,293] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:55:51,293] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:55:51,293] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,294] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:55:51,294] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,295] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:55:51,296] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:55:51,297] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:55:51,297] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:55:51,297] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:55:51,307] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:55:51,307] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:55:51,308] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:55:51,308] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:55:51,308] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:55:51,308] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:55:51,308] {subprocess.py:78} INFO - + pwd
+[2021-10-10 19:55:51,308] {subprocess.py:78} INFO - /tmp/airflowtmp3ad_wnl3
+[2021-10-10 19:55:51,308] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py mc1 40000 /home/abd/airflow/data/bsm-search/mc1_2.root
+[2021-10-10 19:55:52,398] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:55:52,410] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.generate_group_mc1.generate_mc1_2, execution_date=20211009T000000, start_date=20211010T165551, end_date=20211010T165552
+[2021-10-10 19:55:52,445] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:55:52,462] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:17:23,136] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:17:23,142] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:17:23,142] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:17:23,142] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 20:17:23,142] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:17:23,152] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc1.generate_group_mc1.generate_mc1_2> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:17:23,153] {standard_task_runner.py:52} INFO - Started process 9681 to run task
+[2021-10-10 20:17:23,156] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.generate_group_mc1.generate_mc1_2', '2021-10-09T00:00:00+00:00', '--job-id', '575', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpn8rle_co', '--error-file', '/tmp/tmp7o5kq153']
+[2021-10-10 20:17:23,156] {standard_task_runner.py:77} INFO - Job 575: Subtask mc.mc1.generate_group_mc1.generate_mc1_2
+[2021-10-10 20:17:23,177] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:17:23,202] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.generate_group_mc1.generate_mc1_2
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:17:23,202] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:17:23,203] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 20:17:23,206] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:17:23,207] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:17:23,208] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:17:23,208] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:17:23,208] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:17:23,208] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:17:23,208] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:17:23,208] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:17:23,209] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:17:23,210] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:17:23,211] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - + pwd
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - /tmp/airflowtmp8bh5gtvm
+[2021-10-10 20:17:23,222] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py mc1 40000 /home/abd/airflow/data/bsm-search/mc1_2.root
+[2021-10-10 20:17:24,309] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 20:17:24,326] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.generate_group_mc1.generate_mc1_2, execution_date=20211009T000000, start_date=20211010T171723, end_date=20211010T171724
+[2021-10-10 20:17:24,370] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 20:17:24,403] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:36:46,156] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:36:46,161] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:36:46,161] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:36:46,161] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 20:36:46,161] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:36:46,169] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc1.generate_group_mc1.generate_mc1_2> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:36:46,170] {standard_task_runner.py:52} INFO - Started process 14231 to run task
+[2021-10-10 20:36:46,174] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc1.generate_group_mc1.generate_mc1_2', '2021-10-09T00:00:00+00:00', '--job-id', '575', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp9oa8w73h', '--error-file', '/tmp/tmpkqykb7bc']
+[2021-10-10 20:36:46,174] {standard_task_runner.py:77} INFO - Job 575: Subtask mc.mc1.generate_group_mc1.generate_mc1_2
+[2021-10-10 20:36:46,193] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc1.generate_group_mc1.generate_mc1_2 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:36:46,217] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc1.generate_group_mc1.generate_mc1_2
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:36:46,218] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:36:46,218] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            pwd\n            python ${code}/generatetuple.py ${type} ${nevents} ${base_dir}/${type}_${jobnumber}.root\n            ']
+[2021-10-10 20:36:46,222] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:36:46,222] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:36:46,223] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:36:46,223] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:36:46,223] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:36:46,223] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:36:46,223] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:36:46,224] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:36:46,225] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:36:46,225] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:36:46,225] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:36:46,225] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:36:46,225] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:36:46,225] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:36:46,225] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:36:46,226] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:36:46,227] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:36:46,227] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:36:46,227] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:36:46,227] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:36:46,227] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:36:46,236] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:36:46,236] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:36:46,236] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:36:46,236] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:36:46,237] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:36:46,237] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:36:46,237] {subprocess.py:78} INFO - + pwd
+[2021-10-10 20:36:46,237] {subprocess.py:78} INFO - /tmp/airflowtmp6pk5_el3
+[2021-10-10 20:36:46,237] {subprocess.py:78} INFO - + python /home/abd/airflow/code/generatetuple.py mc1 40000 /home/abd/airflow/data/bsm-search/mc1_2.root
+[2021-10-10 20:36:47,324] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 20:36:47,335] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc1.generate_group_mc1.generate_mc1_2, execution_date=20211009T000000, start_date=20211010T173646, end_date=20211010T173647
+[2021-10-10 20:36:47,348] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 20:36:47,359] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

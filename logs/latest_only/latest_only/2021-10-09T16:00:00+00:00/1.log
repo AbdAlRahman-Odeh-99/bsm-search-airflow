@@ -1,0 +1,25 @@
+[2021-10-10 17:09:20,794] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: latest_only.latest_only 2021-10-09T16:00:00+00:00 [queued]>
+[2021-10-10 17:09:20,799] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: latest_only.latest_only 2021-10-09T16:00:00+00:00 [queued]>
+[2021-10-10 17:09:20,799] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:09:20,799] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2021-10-10 17:09:20,799] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:09:20,806] {taskinstance.py:1115} INFO - Executing <Task(LatestOnlyOperator): latest_only> on 2021-10-09T16:00:00+00:00
+[2021-10-10 17:09:20,807] {standard_task_runner.py:52} INFO - Started process 16695 to run task
+[2021-10-10 17:09:20,810] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'latest_only', 'latest_only', '2021-10-09T16:00:00+00:00', '--job-id', '189', '--pool', 'default_pool', '--raw', '--subdir', '/usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_latest_only.py', '--cfg-path', '/tmp/tmptyc6m9tu', '--error-file', '/tmp/tmpv_yyz6c_']
+[2021-10-10 17:09:20,811] {standard_task_runner.py:77} INFO - Job 189: Subtask latest_only
+[2021-10-10 17:09:20,829] {logging_mixin.py:109} INFO - Running <TaskInstance: latest_only.latest_only 2021-10-09T16:00:00+00:00 [running]> on host abd
+[2021-10-10 17:09:20,868] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=latest_only
+AIRFLOW_CTX_TASK_ID=latest_only
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T16:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T16:00:00+00:00
+[2021-10-10 17:09:20,869] {latest_only.py:53} INFO - Checking latest only with left_window: 2021-10-09T20:00:00+00:00 right_window: 2021-10-10T00:00:00+00:00 now: 2021-10-10T14:09:20.869041+00:00
+[2021-10-10 17:09:20,869] {latest_only.py:61} INFO - Not latest execution, skipping downstream.
+[2021-10-10 17:09:20,869] {skipmixin.py:124} INFO - Following branch []
+[2021-10-10 17:09:20,872] {skipmixin.py:155} INFO - Skipping tasks ['task1']
+[2021-10-10 17:09:20,898] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=latest_only, task_id=latest_only, execution_date=20211009T160000, start_date=20211010T140920, end_date=20211010T140920
+[2021-10-10 17:09:20,941] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:09:20,951] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

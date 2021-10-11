@@ -1,0 +1,53 @@
+[2021-10-10 17:08:24,809] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_dag_decorator.send_email 2021-10-10T14:06:28.150306+00:00 [queued]>
+[2021-10-10 17:08:24,814] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_dag_decorator.send_email 2021-10-10T14:06:28.150306+00:00 [queued]>
+[2021-10-10 17:08:24,814] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:08:24,814] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2021-10-10 17:08:24,814] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:08:24,821] {taskinstance.py:1115} INFO - Executing <Task(EmailOperator): send_email> on 2021-10-10T14:06:28.150306+00:00
+[2021-10-10 17:08:24,823] {standard_task_runner.py:52} INFO - Started process 16328 to run task
+[2021-10-10 17:08:24,827] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'example_dag_decorator', 'send_email', '2021-10-10T14:06:28.150306+00:00', '--job-id', '136', '--pool', 'default_pool', '--raw', '--subdir', '/usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_dag_decorator.py', '--cfg-path', '/tmp/tmp6tjfkct9', '--error-file', '/tmp/tmpe7krr5e7']
+[2021-10-10 17:08:24,827] {standard_task_runner.py:77} INFO - Job 136: Subtask send_email
+[2021-10-10 17:08:24,888] {logging_mixin.py:109} INFO - Running <TaskInstance: example_dag_decorator.send_email 2021-10-10T14:06:28.150306+00:00 [running]> on host abd
+[2021-10-10 17:08:24,917] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=example_dag_decorator
+AIRFLOW_CTX_TASK_ID=send_email
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-10T14:06:28.150306+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-10-10T14:06:28.150306+00:00
+[2021-10-10 17:08:24,924] {logging_mixin.py:109} WARNING - /usr/local/lib/python3.8/dist-packages/airflow/utils/email.py:102 PendingDeprecationWarning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2021-10-10 17:08:24,924] {configuration.py:365} WARNING - section/key [smtp/smtp_user] not found in config
+[2021-10-10 17:08:24,924] {email.py:208} INFO - Email alerting: attempt 1
+[2021-10-10 17:08:24,924] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/email.py", line 79, in execute
+    send_email(
+  File "/usr/local/lib/python3.8/dist-packages/airflow/utils/email.py", line 55, in send_email
+    return backend(
+  File "/usr/local/lib/python3.8/dist-packages/airflow/utils/email.py", line 102, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/utils/email.py", line 210, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/utils/email.py", line 244, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/lib/python3.8/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python3.8/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2021-10-10 17:08:24,926] {taskinstance.py:1506} INFO - Marking task as FAILED. dag_id=example_dag_decorator, task_id=send_email, execution_date=20211010T140628, start_date=20211010T140824, end_date=20211010T140824
+[2021-10-10 17:08:24,958] {local_task_job.py:151} INFO - Task exited with return code 1
+[2021-10-10 17:08:25,017] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

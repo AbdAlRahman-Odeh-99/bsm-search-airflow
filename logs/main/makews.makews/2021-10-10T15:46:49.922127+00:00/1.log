@@ -1,0 +1,411 @@
+[2021-10-10 18:48:39,128] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.makews.makews 2021-10-10T15:46:49.922127+00:00 [queued]>
+[2021-10-10 18:48:39,135] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.makews.makews 2021-10-10T15:46:49.922127+00:00 [queued]>
+[2021-10-10 18:48:39,135] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 18:48:39,135] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 18:48:39,135] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 18:48:39,148] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): makews.makews> on 2021-10-10T15:46:49.922127+00:00
+[2021-10-10 18:48:39,152] {standard_task_runner.py:52} INFO - Started process 43916 to run task
+[2021-10-10 18:48:39,158] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'makews.makews', '2021-10-10T15:46:49.922127+00:00', '--job-id', '668', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp2o92zy7q', '--error-file', '/tmp/tmp2edreiaw']
+[2021-10-10 18:48:39,159] {standard_task_runner.py:77} INFO - Job 668: Subtask makews.makews
+[2021-10-10 18:48:39,184] {logging_mixin.py:109} INFO - Running <TaskInstance: main.makews.makews 2021-10-10T15:46:49.922127+00:00 [running]> on host abd
+[2021-10-10 18:48:39,226] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=makews.makews
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-10T15:46:49.922127+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-10-10T15:46:49.922127+00:00
+[2021-10-10 18:48:39,226] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 18:48:39,226] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh\n            python ${code}/makews.py ${base_dir}/${data_bkg_hists} ${workspace_prefix} ${xml_dir}\n        ']
+[2021-10-10 18:48:39,231] {subprocess.py:74} INFO - Output:
+[2021-10-10 18:48:39,232] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 18:48:39,233] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 18:48:39,233] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 18:48:39,233] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 18:48:39,233] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 18:48:39,233] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 18:48:39,234] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 18:48:39,234] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 18:48:39,235] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 18:48:39,235] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 18:48:39,235] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 18:48:39,235] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 18:48:39,235] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 18:48:39,235] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,235] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 18:48:39,235] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 18:48:39,237] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 18:48:39,237] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 18:48:39,237] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 18:48:39,238] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 18:48:39,239] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 18:48:39,250] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 18:48:39,250] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 18:48:39,251] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 18:48:39,251] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 18:48:39,251] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 18:48:39,251] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 18:48:39,251] {subprocess.py:78} INFO - + python /home/abd/airflow/code/makews.py /home/abd/airflow/data/bsm-search/all_merged_hist.root /home/abd/airflow/data/bsm-search/results /home/abd/airflow/data/bsm-search/xmldir
+[2021-10-10 18:48:40,099] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,099] {subprocess.py:78} INFO - [1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m
+[2021-10-10 18:48:40,099] {subprocess.py:78} INFO -                 Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+[2021-10-10 18:48:40,100] {subprocess.py:78} INFO -                 All rights reserved, please read http://roofit.sourceforge.net/license.txt
+[2021-10-10 18:48:40,100] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,301] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/data_nominal
+[2021-10-10 18:48:40,349] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Opened input file: /home/abd/airflow/data/bsm-search/all_merged_hist.root:
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/signal_nominal
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/qcd_nominal
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc1_nominal
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc1_weight_var1_dn
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc1_weight_var1_up
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc1_shape_conv_dn
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc1_shape_conv_up
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc2_nominal
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc2_weight_var1_dn
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc2_weight_var1_up
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc2_shape_conv_dn
+[2021-10-10 18:48:40,354] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Getting histogram /home/abd/airflow/data/bsm-search/all_merged_hist.root:/mc2_shape_conv_up
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - Measurement Name: meas	 OutputFilePrefix: /home/abd/airflow/data/bsm-search/results	 POI: SigXsecOverSM	 Lumi: 1	 LumiRelErr: 0.1	 BinLow: 0	 BinHigh: 1	 ExportOnly: 0
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - Channels:
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - 	 Channel Name: channel1	 InputFile:
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - 	 Data:
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - 	 	 InputFile: /home/abd/airflow/data/bsm-search/all_merged_hist.root	 HistoName: data_nominal	 HistoPath: 	 HistoAddress: 0x56366b44b3b0
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - 	 statErrorConfig:
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - 	 	 RelErrorThreshold: 0.05	 ConstraintType: Poisson
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - 	 Samples:
+[2021-10-10 18:48:40,359] {subprocess.py:78} INFO - 	 	 Name: signal	 	 Channel: channel1	 NormalizeByTheory: True	 StatErrorActivate: False
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - 	 	 	 	 	 InputFile: /home/abd/airflow/data/bsm-search/all_merged_hist.root	 HistName: signal_nominal	 HistoPath: 	 HistoAddress: 0x56366baa6370
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - 	 	 Name: qcd	 	 Channel: channel1	 NormalizeByTheory: True	 StatErrorActivate: False
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - 	 	 	 	 	 InputFile: /home/abd/airflow/data/bsm-search/all_merged_hist.root	 HistName: qcd_nominal	 HistoPath: 	 HistoAddress: 0x56366baa6b90
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - 	 	 Name: mc1	 	 Channel: channel1	 NormalizeByTheory: True	 StatErrorActivate: False
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - 	 	 	 	 	 InputFile: /home/abd/airflow/data/bsm-search/all_merged_hist.root	 HistName: mc1_nominal	 HistoPath: 	 HistoAddress: 0x56366baa7530
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - 	 	 Name: mc2	 	 Channel: channel1	 NormalizeByTheory: True	 StatErrorActivate: False
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - 	 	 	 	 	 InputFile: /home/abd/airflow/data/bsm-search/all_merged_hist.root	 HistName: mc2_nominal	 HistoPath: 	 HistoAddress: 0x56366baccd20
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - 	 End of Channel channel1
+[2021-10-10 18:48:40,360] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- End Measurement: meas
+[2021-10-10 18:48:40,367] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Printing XML Files for measurement: meas
+[2021-10-10 18:48:40,367] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Printing XML Files for channel: channel1
+[2021-10-10 18:48:40,372] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Finished printing XML files
+[2021-10-10 18:48:40,372] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Finished printing XML files
+[2021-10-10 18:48:40,383] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Making Model and Measurements (Fast) for measurement: meas
+[2021-10-10 18:48:40,383] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- using lumi = 1 and lumiError = 0.1 including bins between 0 and 1
+[2021-10-10 18:48:40,383] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- fixing the following parameters:
+[2021-10-10 18:48:40,383] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Creating the output file: /home/abd/airflow/data/bsm-search/results_meas.root
+[2021-10-10 18:48:40,401] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Creating the table file: /home/abd/airflow/data/bsm-search/results_results.table
+[2021-10-10 18:48:40,401] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Creating the HistoToWorkspaceFactoryFast factory
+[2021-10-10 18:48:40,401] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Setting preprocess functions
+[2021-10-10 18:48:40,401] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Starting to process channel: channel1
+[2021-10-10 18:48:40,401] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory --
+[2021-10-10 18:48:40,402] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:40,402] {subprocess.py:78} INFO - 	Starting to process 'channel1' channel with 1 observables
+[2021-10-10 18:48:40,402] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:40,402] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,404] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- lumi str = [1,0,10]
+[2021-10-10 18:48:40,422] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- lumi Error str = nominalLumi[1,0,2],0.1
+[2021-10-10 18:48:40,422] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- making normFactor: SigXsecOverSM
+[2021-10-10 18:48:40,428] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- signal_channel1 has no variation histograms
+[2021-10-10 18:48:40,428] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- processing hist signal_nominal
+[2021-10-10 18:48:40,434] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- qcd_channel1 has no variation histograms
+[2021-10-10 18:48:40,434] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- processing hist qcd_nominal
+[2021-10-10 18:48:40,439] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Gaussian::alpha_mc1_weight_var1Constraint(alpha_mc1_weight_var1,nom_alpha_mc1_weight_var1[0.,-10,10],1.)
+[2021-10-10 18:48:40,444] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Gaussian::alpha_mc1_shape_convConstraint(alpha_mc1_shape_conv,nom_alpha_mc1_shape_conv[0.,-10,10],1.)
+[2021-10-10 18:48:40,458] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Gaussian::alpha_mc2_weight_var1Constraint(alpha_mc2_weight_var1,nom_alpha_mc2_weight_var1[0.,-10,10],1.)
+[2021-10-10 18:48:40,463] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Gaussian::alpha_mc2_shape_convConstraint(alpha_mc2_shape_conv,nom_alpha_mc2_shape_conv[0.,-10,10],1.)
+[2021-10-10 18:48:40,493] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory --
+[2021-10-10 18:48:40,494] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:40,494] {subprocess.py:78} INFO - 	import model into workspace
+[2021-10-10 18:48:40,494] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:40,494] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,497] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:40,497] {subprocess.py:78} INFO - RooDataSet::AsimovData[obs_x_channel1,weight:binWeightAsimov] = 50 entries (12311.4 weighted)
+[2021-10-10 18:48:40,497] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,498] {subprocess.py:78} INFO - RooWorkspace(channel1) channel1 workspace contents
+[2021-10-10 18:48:40,498] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - variables
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - ---------
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - (Lumi,SigXsecOverSM,alpha_mc1_shape_conv,alpha_mc1_weight_var1,alpha_mc2_shape_conv,alpha_mc2_weight_var1,binWidth_obs_x_channel1_0,binWidth_obs_x_channel1_1,binWidth_obs_x_channel1_2,binWidth_obs_x_channel1_3,nom_alpha_mc1_shape_conv,nom_alpha_mc1_weight_var1,nom_alpha_mc2_shape_conv,nom_alpha_mc2_weight_var1,nominalLumi,obs_x_channel1,weightVar)
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - p.d.f.s
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - -------
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooGaussian::alpha_mc1_shape_convConstraint[ x=alpha_mc1_shape_conv mean=nom_alpha_mc1_shape_conv sigma=1 ] = 1
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooGaussian::alpha_mc1_weight_var1Constraint[ x=alpha_mc1_weight_var1 mean=nom_alpha_mc1_weight_var1 sigma=1 ] = 1
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooGaussian::alpha_mc2_shape_convConstraint[ x=alpha_mc2_shape_conv mean=nom_alpha_mc2_shape_conv sigma=1 ] = 1
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooGaussian::alpha_mc2_weight_var1Constraint[ x=alpha_mc2_weight_var1 mean=nom_alpha_mc2_weight_var1 sigma=1 ] = 1
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooRealSumPdf::channel1_model[ binWidth_obs_x_channel1_0 * L_x_signal_channel1_overallSyst_x_Exp + binWidth_obs_x_channel1_1 * L_x_qcd_channel1_overallSyst_x_Exp + binWidth_obs_x_channel1_2 * L_x_mc1_channel1_overallSyst_x_HistSyst + binWidth_obs_x_channel1_3 * L_x_mc2_channel1_overallSyst_x_HistSyst ] = 1441.88/12311.4
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooGaussian::lumiConstraint[ x=Lumi mean=nominalLumi sigma=0.1 ] = 1
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooProdPdf::model_channel1[ lumiConstraint * alpha_mc1_weight_var1Constraint * alpha_mc1_shape_convConstraint * alpha_mc2_weight_var1Constraint * alpha_mc2_shape_convConstraint * channel1_model(obs_x_channel1) ] = 1441.88
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - functions
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - --------
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooProduct::L_x_mc1_channel1_overallSyst_x_HistSyst[ Lumi * mc1_channel1_overallSyst_x_HistSyst ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooProduct::L_x_mc2_channel1_overallSyst_x_HistSyst[ Lumi * mc2_channel1_overallSyst_x_HistSyst ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooProduct::L_x_qcd_channel1_overallSyst_x_Exp[ Lumi * qcd_channel1_overallSyst_x_Exp ] = 288.375
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooProduct::L_x_signal_channel1_overallSyst_x_Exp[ Lumi * signal_channel1_overallSyst_x_Exp ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - PiecewiseInterpolation::mc1_channel1_Hist_alpha[ ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooHistFunc::mc1_channel1_Hist_alpha_0high[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooHistFunc::mc1_channel1_Hist_alpha_0low[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooHistFunc::mc1_channel1_Hist_alpha_1high[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooHistFunc::mc1_channel1_Hist_alpha_1low[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooHistFunc::mc1_channel1_Hist_alphanominal[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooProduct::mc1_channel1_overallSyst_x_HistSyst[ mc1_channel1_Hist_alpha * mc1_channel1_epsilon ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - PiecewiseInterpolation::mc2_channel1_Hist_alpha[ ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooHistFunc::mc2_channel1_Hist_alpha_0high[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,499] {subprocess.py:78} INFO - RooHistFunc::mc2_channel1_Hist_alpha_0low[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooHistFunc::mc2_channel1_Hist_alpha_1high[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooHistFunc::mc2_channel1_Hist_alpha_1low[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooHistFunc::mc2_channel1_Hist_alphanominal[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooProduct::mc2_channel1_overallSyst_x_HistSyst[ mc2_channel1_Hist_alpha * mc2_channel1_epsilon ] = 0
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooHistFunc::qcd_channel1_nominal[ depList=(obs_x_channel1) ] = 288.375
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooProduct::qcd_channel1_overallSyst_x_Exp[ qcd_channel1_nominal * qcd_channel1_epsilon ] = 288.375
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooHistFunc::signal_channel1_nominal[ depList=(obs_x_channel1) ] = 0
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooProduct::signal_channel1_overallNorm_x_sigma_epsilon[ SigXsecOverSM * signal_channel1_epsilon ] = 1
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooProduct::signal_channel1_overallSyst_x_Exp[ signal_channel1_nominal * signal_channel1_overallNorm_x_sigma_epsilon ] = 0
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - datasets
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - --------
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataSet::asimovData(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataSet::obsData(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - embedded datasets (in pdfs and functions)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::signal_channel1nominalDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::qcd_channel1nominalDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc1_channel1_Hist_alphanominalDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc1_channel1_Hist_alpha_0lowDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc1_channel1_Hist_alpha_1lowDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc1_channel1_Hist_alpha_0highDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc1_channel1_Hist_alpha_1highDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc2_channel1_Hist_alphanominalDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc2_channel1_Hist_alpha_0lowDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc2_channel1_Hist_alpha_1lowDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc2_channel1_Hist_alpha_0highDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - RooDataHist::mc2_channel1_Hist_alpha_1highDHist(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - named sets
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - ----------
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - ModelConfig_GlobalObservables:(nominalLumi,nom_alpha_mc1_weight_var1,nom_alpha_mc1_shape_conv,nom_alpha_mc2_weight_var1,nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - ModelConfig_Observables:(obs_x_channel1)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - coefList:(binWidth_obs_x_channel1_0,binWidth_obs_x_channel1_1,binWidth_obs_x_channel1_2,binWidth_obs_x_channel1_3)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - constraintTerms:(lumiConstraint,alpha_mc1_weight_var1Constraint,alpha_mc1_shape_convConstraint,alpha_mc2_weight_var1Constraint,alpha_mc2_shape_convConstraint)
+[2021-10-10 18:48:40,500] {subprocess.py:78} INFO - globalObservables:(nominalLumi,nom_alpha_mc1_weight_var1,nom_alpha_mc1_shape_conv,nom_alpha_mc2_weight_var1,nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - likelihoodTerms:(channel1_model)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - obsAndWeight:(weightVar,obs_x_channel1)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - observables:(obs_x_channel1)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - observablesSet:(obs_x_channel1)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - shapeList:(L_x_signal_channel1_overallSyst_x_Exp,L_x_qcd_channel1_overallSyst_x_Exp,L_x_mc1_channel1_overallSyst_x_HistSyst,L_x_mc2_channel1_overallSyst_x_HistSyst)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - generic objects
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - ---------------
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - RooStats::ModelConfig::ModelConfig
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Setting Parameter(s) of Interest as: SigXsecOverSM
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - === Using the following for ModelConfig ===
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - Observables:             RooArgSet:: = (obs_x_channel1)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - Parameters of Interest:  RooArgSet:: = (SigXsecOverSM)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - Nuisance Parameters:     RooArgSet:: = (Lumi,alpha_mc1_shape_conv,alpha_mc1_weight_var1,alpha_mc2_shape_conv,alpha_mc2_weight_var1)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - Global Observables:      RooArgSet:: = (nominalLumi,nom_alpha_mc1_weight_var1,nom_alpha_mc1_shape_conv,nom_alpha_mc2_weight_var1,nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - PDF:                     RooProdPdf::model_channel1[ lumiConstraint * alpha_mc1_weight_var1Constraint * alpha_mc1_shape_convConstraint * alpha_mc2_weight_var1Constraint * alpha_mc2_shape_convConstraint * channel1_model(obs_x_channel1) ] = 1441.88
+[2021-10-10 18:48:40,501] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,839] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Opening File to hold channel: /home/abd/airflow/data/bsm-search/results_channel1_meas_model.root
+[2021-10-10 18:48:40,840] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- About to write channel measurement to file
+[2021-10-10 18:48:40,841] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing sample: signal
+[2021-10-10 18:48:40,841] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing sample: qcd
+[2021-10-10 18:48:40,841] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing sample: mc1
+[2021-10-10 18:48:40,842] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing sample: mc2
+[2021-10-10 18:48:40,842] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Saved all histograms
+[2021-10-10 18:48:40,919] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Saved Measurement
+[2021-10-10 18:48:40,919] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Successfully wrote channel to file
+[2021-10-10 18:48:40,927] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory --
+[2021-10-10 18:48:40,927] {subprocess.py:78} INFO - ---------------
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - Doing channel1 Fit
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - ---------------
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - [#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - [#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_model_channel1_FOR_OBS_obs_x_channel1 with 5 entries
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - [#1] INFO:Minization --  Including the following constraint terms in minimization: (lumiConstraint,alpha_mc1_weight_var1Constraint,alpha_mc1_shape_convConstraint,alpha_mc2_weight_var1Constraint,alpha_mc2_shape_convConstraint)
+[2021-10-10 18:48:40,928] {subprocess.py:78} INFO - [#1] INFO:Fitting -- RooAddition::defaultErrorLevel(nll_model_channel1_obsData_with_constr) Summation contains a RooNLLVar, using its error level
+[2021-10-10 18:48:40,929] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[2021-10-10 18:48:40,929] {subprocess.py:78} INFO - [#1] INFO:Minization --  The following expressions have been identified as constant and will be precalculated and cached: (signal_channel1_nominal,qcd_channel1_overallSyst_x_Exp,mc1_channel1_Hist_alphanominal,mc1_channel1_Hist_alpha_0low,mc1_channel1_Hist_alpha_1low,mc1_channel1_Hist_alpha_0high,mc1_channel1_Hist_alpha_1high,mc2_channel1_Hist_alphanominal,mc2_channel1_Hist_alpha_0low,mc2_channel1_Hist_alpha_1low,mc2_channel1_Hist_alpha_0high,mc2_channel1_Hist_alpha_1high)
+[2021-10-10 18:48:40,929] {subprocess.py:78} INFO - [#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (mc1_channel1_Hist_alpha,mc2_channel1_Hist_alpha)
+[2021-10-10 18:48:41,025] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[2021-10-10 18:48:41,026] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- printing results for SigXsecOverSM at 9.41707e-08 high 0 low 0.152231
+[2021-10-10 18:48:41,026] {subprocess.py:78} INFO - [#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[2021-10-10 18:48:41,027] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:41,027] {subprocess.py:78} INFO - [#1] INFO:Minization -- createNLL picked up cached constraints from workspace with 5 entries
+[2021-10-10 18:48:41,027] {subprocess.py:78} INFO - [#1] INFO:Minization --  Including the following constraint terms in minimization: (lumiConstraint,alpha_mc1_weight_var1Constraint,alpha_mc1_shape_convConstraint,alpha_mc2_weight_var1Constraint,alpha_mc2_shape_convConstraint)
+[2021-10-10 18:48:41,029] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:41,029] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:41,029] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(lumiConstraint_Int[Lumi,nominalLumi]) using numeric integrator RooIntegrator1D to calculate Int(nominalLumi)
+[2021-10-10 18:48:41,030] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_weight_var1Constraint_Int[alpha_mc1_weight_var1,nom_alpha_mc1_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_weight_var1)
+[2021-10-10 18:48:41,030] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_shape_convConstraint_Int[alpha_mc1_shape_conv,nom_alpha_mc1_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_shape_conv)
+[2021-10-10 18:48:41,030] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_weight_var1Constraint_Int[alpha_mc2_weight_var1,nom_alpha_mc2_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_weight_var1)
+[2021-10-10 18:48:41,030] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_shape_convConstraint_Int[alpha_mc2_shape_conv,nom_alpha_mc2_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:41,059] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:41,059] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooProfileLL::evaluate(nll_model_channel1_obsData_with_constr_Profile[SigXsecOverSM]) Creating instance of MINUIT
+[2021-10-10 18:48:41,059] {subprocess.py:78} INFO - [#1] INFO:Fitting -- RooAddition::defaultErrorLevel(nll_model_channel1_obsData_with_constr) Summation contains a RooNLLVar, using its error level
+[2021-10-10 18:48:41,059] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooProfileLL::evaluate(nll_model_channel1_obsData_with_constr_Profile[SigXsecOverSM]) determining minimum likelihood for current configurations w.r.t all observable
+[2021-10-10 18:48:41,059] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:41,060] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(lumiConstraint_Int[Lumi,nominalLumi]) using numeric integrator RooIntegrator1D to calculate Int(nominalLumi)
+[2021-10-10 18:48:41,060] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_weight_var1Constraint_Int[alpha_mc1_weight_var1,nom_alpha_mc1_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_weight_var1)
+[2021-10-10 18:48:41,060] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_shape_convConstraint_Int[alpha_mc1_shape_conv,nom_alpha_mc1_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_shape_conv)
+[2021-10-10 18:48:41,060] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_weight_var1Constraint_Int[alpha_mc2_weight_var1,nom_alpha_mc2_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_weight_var1)
+[2021-10-10 18:48:41,060] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_shape_convConstraint_Int[alpha_mc2_shape_conv,nom_alpha_mc2_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:41,072] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooProfileLL::evaluate(nll_model_channel1_obsData_with_constr_Profile[SigXsecOverSM]) minimum found at (SigXsecOverSM=1.47917e-10)
+[2021-10-10 18:48:44,513] {subprocess.py:78} INFO - ..........................................................................................................................................................................................................Info in <TCanvas::Print>: eps file /home/abd/airflow/data/bsm-search/results_channel1_meas_profileLR.eps has been created
+[2021-10-10 18:48:44,513] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,513] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(lumiConstraint_Int[Lumi,nominalLumi]) using numeric integrator RooIntegrator1D to calculate Int(nominalLumi)
+[2021-10-10 18:48:44,513] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_weight_var1Constraint_Int[alpha_mc1_weight_var1,nom_alpha_mc1_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_weight_var1)
+[2021-10-10 18:48:44,513] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_shape_convConstraint_Int[alpha_mc1_shape_conv,nom_alpha_mc1_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_shape_conv)
+[2021-10-10 18:48:44,513] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_weight_var1Constraint_Int[alpha_mc2_weight_var1,nom_alpha_mc2_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_weight_var1)
+[2021-10-10 18:48:44,513] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_shape_convConstraint_Int[alpha_mc2_shape_conv,nom_alpha_mc2_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:44,529] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- full list of observables:
+[2021-10-10 18:48:44,529] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- (obs_x_channel1)[#2] PROGRESS:HistFactory --
+[2021-10-10 18:48:44,529] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:44,529] {subprocess.py:78} INFO - 	Entering combination
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory --
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - 	create toy data for channelCat[channel1]
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - RooDataSet::AsimovData0[obs_x_channel1,channelCat,weight:binWeightAsimov] = 50 entries (12311.4 weighted)
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Merging data for channel channel1
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - RooWorkspace(combined) combined contents
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - variables
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - ---------
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - (channelCat,nom_alpha_mc1_shape_conv,nom_alpha_mc1_weight_var1,nom_alpha_mc2_shape_conv,nom_alpha_mc2_weight_var1,nominalLumi,obs_x_channel1,weightVar)
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - datasets
+[2021-10-10 18:48:44,530] {subprocess.py:78} INFO - --------
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - RooDataSet::asimovData(obs_x_channel1,weightVar,channelCat)
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - RooDataSet::obsData(channelCat,obs_x_channel1)
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - named sets
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - ----------
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - ModelConfig_GlobalObservables:(nominalLumi,nom_alpha_mc1_weight_var1,nom_alpha_mc1_shape_conv,nom_alpha_mc2_weight_var1,nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - ModelConfig_Observables:(obs_x_channel1,weightVar,channelCat)
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - globalObservables:(nominalLumi,nom_alpha_mc1_weight_var1,nom_alpha_mc1_shape_conv,nom_alpha_mc2_weight_var1,nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - observables:(obs_x_channel1,weightVar,channelCat)
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory --
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - 	Importing combined model
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - -----------------------------------------
+[2021-10-10 18:48:44,531] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- Setting Parameter(s) of Interest as: SigXsecOverSM
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - === Using the following for ModelConfig ===
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - Observables:             RooArgSet:: = (obs_x_channel1,weightVar,channelCat)
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - Parameters of Interest:  RooArgSet:: = (SigXsecOverSM)
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - Nuisance Parameters:     RooArgSet:: = (Lumi,alpha_mc1_shape_conv,alpha_mc1_weight_var1,alpha_mc2_shape_conv,alpha_mc2_weight_var1)
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - Global Observables:      RooArgSet:: = (nominalLumi,nom_alpha_mc1_weight_var1,nom_alpha_mc1_shape_conv,nom_alpha_mc2_weight_var1,nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - PDF:                     RooSimultaneous::simPdf[ indexCat=channelCat channel1=model_channel1 ] = 1441.88
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,532] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing combined workspace to file: /home/abd/airflow/data/bsm-search/results_combined_meas_model.root
+[2021-10-10 18:48:44,553] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing combined measurement to file: /home/abd/airflow/data/bsm-search/results_combined_meas_model.root
+[2021-10-10 18:48:44,555] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing sample: signal
+[2021-10-10 18:48:44,555] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing sample: qcd
+[2021-10-10 18:48:44,555] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing sample: mc1
+[2021-10-10 18:48:44,555] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Writing sample: mc2
+[2021-10-10 18:48:44,555] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Saved all histograms
+[2021-10-10 18:48:44,556] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory -- Saved Measurement
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - [#2] PROGRESS:HistFactory --
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - ---------------
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - Doing combined Fit
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - ---------------
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - [#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - [#1] INFO:Minization -- createNLL: caching constraint set under name CONSTR_OF_PDF_simPdf_FOR_OBS_channelCat:obs_x_channel1 with 5 entries
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - [#1] INFO:Minization --  Including the following constraint terms in minimization: (lumiConstraint,alpha_mc1_weight_var1Constraint,alpha_mc1_shape_convConstraint,alpha_mc2_weight_var1Constraint,alpha_mc2_shape_convConstraint)
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - [#1] INFO:Fitting -- RooAddition::defaultErrorLevel(nll_simPdf_obsData_with_constr) Summation contains a RooNLLVar, using its error level
+[2021-10-10 18:48:44,559] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[2021-10-10 18:48:44,560] {subprocess.py:78} INFO - RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state channel1 (50 dataset entries)
+[2021-10-10 18:48:44,560] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:44,560] {subprocess.py:78} INFO - [#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 1 slave calculators.
+[2021-10-10 18:48:44,561] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:44,561] {subprocess.py:78} INFO - [#1] INFO:Minization --  The following expressions have been identified as constant and will be precalculated and cached: (signal_channel1_nominal,qcd_channel1_overallSyst_x_Exp,mc1_channel1_Hist_alphanominal,mc1_channel1_Hist_alpha_0low,mc1_channel1_Hist_alpha_1low,mc1_channel1_Hist_alpha_0high,mc1_channel1_Hist_alpha_1high,mc2_channel1_Hist_alphanominal,mc2_channel1_Hist_alpha_0low,mc2_channel1_Hist_alpha_1low,mc2_channel1_Hist_alpha_0high,mc2_channel1_Hist_alpha_1high)
+[2021-10-10 18:48:44,561] {subprocess.py:78} INFO - [#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (mc1_channel1_Hist_alpha,mc2_channel1_Hist_alpha)
+[2021-10-10 18:48:44,626] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooMinimizer::optimizeConst: deactivating const optimization
+[2021-10-10 18:48:44,627] {subprocess.py:78} INFO - [#2] INFO:HistFactory -- printing results for SigXsecOverSM at 8.97998e-08 high 0 low 0.152231
+[2021-10-10 18:48:44,627] {subprocess.py:78} INFO - [#1] INFO:Minization -- p.d.f. provides expected number of events, including extended term in likelihood.
+[2021-10-10 18:48:44,627] {subprocess.py:78} INFO - [#1] INFO:Minization -- createNLL picked up cached constraints from workspace with 5 entries
+[2021-10-10 18:48:44,627] {subprocess.py:78} INFO - [#1] INFO:Minization --  Including the following constraint terms in minimization: (lumiConstraint,alpha_mc1_weight_var1Constraint,alpha_mc1_shape_convConstraint,alpha_mc2_weight_var1Constraint,alpha_mc2_shape_convConstraint)
+[2021-10-10 18:48:44,627] {subprocess.py:78} INFO - RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state channel1 (50 dataset entries)
+[2021-10-10 18:48:44,628] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:44,628] {subprocess.py:78} INFO - [#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 1 slave calculators.
+[2021-10-10 18:48:44,628] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:44,629] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(lumiConstraint_Int[Lumi,nominalLumi]) using numeric integrator RooIntegrator1D to calculate Int(nominalLumi)
+[2021-10-10 18:48:44,629] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_weight_var1Constraint_Int[alpha_mc1_weight_var1,nom_alpha_mc1_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_weight_var1)
+[2021-10-10 18:48:44,629] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_shape_convConstraint_Int[alpha_mc1_shape_conv,nom_alpha_mc1_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_shape_conv)
+[2021-10-10 18:48:44,629] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_weight_var1Constraint_Int[alpha_mc2_weight_var1,nom_alpha_mc2_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_weight_var1)
+[2021-10-10 18:48:44,629] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_shape_convConstraint_Int[alpha_mc2_shape_conv,nom_alpha_mc2_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:44,657] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooProfileLL::evaluate(nll_simPdf_obsData_with_constr_Profile[SigXsecOverSM]) Creating instance of MINUIT
+[2021-10-10 18:48:44,657] {subprocess.py:78} INFO - [#1] INFO:Fitting -- RooAddition::defaultErrorLevel(nll_simPdf_obsData_with_constr) Summation contains a RooNLLVar, using its error level
+[2021-10-10 18:48:44,657] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooProfileLL::evaluate(nll_simPdf_obsData_with_constr_Profile[SigXsecOverSM]) determining minimum likelihood for current configurations w.r.t all observable
+[2021-10-10 18:48:44,657] {subprocess.py:78} INFO - RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state channel1 (50 dataset entries)
+[2021-10-10 18:48:44,658] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:44,658] {subprocess.py:78} INFO - [#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 1 slave calculators.
+[2021-10-10 18:48:44,658] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:44,659] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(lumiConstraint_Int[Lumi,nominalLumi]) using numeric integrator RooIntegrator1D to calculate Int(nominalLumi)
+[2021-10-10 18:48:44,659] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_weight_var1Constraint_Int[alpha_mc1_weight_var1,nom_alpha_mc1_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_weight_var1)
+[2021-10-10 18:48:44,659] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_shape_convConstraint_Int[alpha_mc1_shape_conv,nom_alpha_mc1_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_shape_conv)
+[2021-10-10 18:48:44,659] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_weight_var1Constraint_Int[alpha_mc2_weight_var1,nom_alpha_mc2_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_weight_var1)
+[2021-10-10 18:48:44,659] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_shape_convConstraint_Int[alpha_mc2_shape_conv,nom_alpha_mc2_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:44,671] {subprocess.py:78} INFO - [#1] INFO:Minization -- RooProfileLL::evaluate(nll_simPdf_obsData_with_constr_Profile[SigXsecOverSM]) minimum found at (SigXsecOverSM=1.4105e-10)
+[2021-10-10 18:48:48,458] {subprocess.py:78} INFO - ..........................................................................................................................................................................................................Info in <TCanvas::Print>: eps file /home/abd/airflow/data/bsm-search/results_combined_meas_profileLR.eps has been created
+[2021-10-10 18:48:48,458] {subprocess.py:78} INFO - 
+[2021-10-10 18:48:48,458] {subprocess.py:78} INFO - RooAbsTestStatistic::initSimMode: creating slave calculator #0 for state channel1 (50 dataset entries)
+[2021-10-10 18:48:48,458] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:48,458] {subprocess.py:78} INFO - [#1] INFO:Fitting -- RooAbsTestStatistic::initSimMode: created 1 slave calculators.
+[2021-10-10 18:48:48,459] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(channel1_model_Int[obs_x_channel1]) using numeric integrator RooBinIntegrator to calculate Int(obs_x_channel1)
+[2021-10-10 18:48:48,459] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(lumiConstraint_Int[Lumi,nominalLumi]) using numeric integrator RooIntegrator1D to calculate Int(nominalLumi)
+[2021-10-10 18:48:48,459] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_weight_var1Constraint_Int[alpha_mc1_weight_var1,nom_alpha_mc1_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_weight_var1)
+[2021-10-10 18:48:48,459] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc1_shape_convConstraint_Int[alpha_mc1_shape_conv,nom_alpha_mc1_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc1_shape_conv)
+[2021-10-10 18:48:48,459] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_weight_var1Constraint_Int[alpha_mc2_weight_var1,nom_alpha_mc2_weight_var1]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_weight_var1)
+[2021-10-10 18:48:48,459] {subprocess.py:78} INFO - [#1] INFO:NumericIntegration -- RooRealIntegral::init(alpha_mc2_shape_convConstraint_Int[alpha_mc2_shape_conv,nom_alpha_mc2_shape_conv]) using numeric integrator RooIntegrator1D to calculate Int(nom_alpha_mc2_shape_conv)
+[2021-10-10 18:48:48,521] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 18:48:48,534] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=makews.makews, execution_date=20211010T154649, start_date=20211010T154839, end_date=20211010T154848
+[2021-10-10 18:48:48,576] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 18:48:48,589] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,22 @@
+[2021-10-10 18:46:55,407] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.singal.scatter_group_sig.scatter_sig 2021-10-10T15:46:49.922127+00:00 [queued]>
+[2021-10-10 18:46:55,412] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.singal.scatter_group_sig.scatter_sig 2021-10-10T15:46:49.922127+00:00 [queued]>
+[2021-10-10 18:46:55,412] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 18:46:55,412] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 18:46:55,412] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 18:46:55,420] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): singal.scatter_group_sig.scatter_sig> on 2021-10-10T15:46:49.922127+00:00
+[2021-10-10 18:46:55,421] {standard_task_runner.py:52} INFO - Started process 41431 to run task
+[2021-10-10 18:46:55,424] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'singal.scatter_group_sig.scatter_sig', '2021-10-10T15:46:49.922127+00:00', '--job-id', '623', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpx7ezbjh7', '--error-file', '/tmp/tmp4tho_pm6']
+[2021-10-10 18:46:55,424] {standard_task_runner.py:77} INFO - Job 623: Subtask singal.scatter_group_sig.scatter_sig
+[2021-10-10 18:46:55,443] {logging_mixin.py:109} INFO - Running <TaskInstance: main.singal.scatter_group_sig.scatter_sig 2021-10-10T15:46:49.922127+00:00 [running]> on host abd
+[2021-10-10 18:46:55,465] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=singal.scatter_group_sig.scatter_sig
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-10T15:46:49.922127+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-10-10T15:46:49.922127+00:00
+[2021-10-10 18:46:55,465] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 18:46:55,468] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=singal.scatter_group_sig.scatter_sig, execution_date=20211010T154649, start_date=20211010T154655, end_date=20211010T154655
+[2021-10-10 18:46:55,515] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 18:46:55,536] {local_task_job.py:261} INFO - 2 downstream tasks scheduled from follow-on schedule check

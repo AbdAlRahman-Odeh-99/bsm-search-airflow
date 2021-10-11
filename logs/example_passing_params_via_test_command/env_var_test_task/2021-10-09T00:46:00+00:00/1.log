@@ -1,0 +1,22 @@
+[2021-10-10 17:12:00,390] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_passing_params_via_test_command.env_var_test_task 2021-10-09T00:46:00+00:00 [queued]>
+[2021-10-10 17:12:00,395] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_passing_params_via_test_command.env_var_test_task 2021-10-09T00:46:00+00:00 [queued]>
+[2021-10-10 17:12:00,395] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:12:00,395] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2021-10-10 17:12:00,395] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:12:00,402] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): env_var_test_task> on 2021-10-09T00:46:00+00:00
+[2021-10-10 17:12:00,403] {standard_task_runner.py:52} INFO - Started process 17660 to run task
+[2021-10-10 17:12:00,406] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'example_passing_params_via_test_command', 'env_var_test_task', '2021-10-09T00:46:00+00:00', '--job-id', '344', '--pool', 'default_pool', '--raw', '--subdir', '/usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_passing_params_via_test_command.py', '--cfg-path', '/tmp/tmpntnxdb6m', '--error-file', '/tmp/tmp_2vdjnj_']
+[2021-10-10 17:12:00,407] {standard_task_runner.py:77} INFO - Job 344: Subtask env_var_test_task
+[2021-10-10 17:12:00,428] {logging_mixin.py:109} INFO - Running <TaskInstance: example_passing_params_via_test_command.env_var_test_task 2021-10-09T00:46:00+00:00 [running]> on host abd
+[2021-10-10 17:12:00,454] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=example_passing_params_via_test_command
+AIRFLOW_CTX_TASK_ID=env_var_test_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:46:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:46:00+00:00
+[2021-10-10 17:12:00,454] {python.py:151} INFO - Done. Returned value was: None
+[2021-10-10 17:12:00,457] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=example_passing_params_via_test_command, task_id=env_var_test_task, execution_date=20211009T004600, start_date=20211010T141200, end_date=20211010T141200
+[2021-10-10 17:12:00,497] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:12:00,508] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

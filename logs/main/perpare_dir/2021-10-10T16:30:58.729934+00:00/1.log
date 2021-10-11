@@ -1,0 +1,28 @@
+[2021-10-10 19:31:01,138] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.perpare_dir 2021-10-10T16:30:58.729934+00:00 [queued]>
+[2021-10-10 19:31:01,146] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.perpare_dir 2021-10-10T16:30:58.729934+00:00 [queued]>
+[2021-10-10 19:31:01,146] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:31:01,146] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:31:01,146] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:31:01,153] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): perpare_dir> on 2021-10-10T16:30:58.729934+00:00
+[2021-10-10 19:31:01,155] {standard_task_runner.py:52} INFO - Started process 49749 to run task
+[2021-10-10 19:31:01,158] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'perpare_dir', '2021-10-10T16:30:58.729934+00:00', '--job-id', '671', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp9xofn4cu', '--error-file', '/tmp/tmp_5qtoy8n']
+[2021-10-10 19:31:01,159] {standard_task_runner.py:77} INFO - Job 671: Subtask perpare_dir
+[2021-10-10 19:31:01,193] {logging_mixin.py:109} INFO - Running <TaskInstance: main.perpare_dir 2021-10-10T16:30:58.729934+00:00 [running]> on host abd
+[2021-10-10 19:31:01,231] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=perpare_dir
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-10T16:30:58.729934+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-10-10T16:30:58.729934+00:00
+[2021-10-10 19:31:01,231] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:31:01,231] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n        set -x\n        rm -rf $base_dir\n        mkdir -p $base_dir\n        ']
+[2021-10-10 19:31:01,236] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:31:01,236] {subprocess.py:78} INFO - + rm -rf /home/abd/airflow/data/bsm-search
+[2021-10-10 19:31:01,240] {subprocess.py:78} INFO - + mkdir -p /home/abd/airflow/data/bsm-search
+[2021-10-10 19:31:01,241] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:31:01,255] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=perpare_dir, execution_date=20211010T163058, start_date=20211010T163101, end_date=20211010T163101
+[2021-10-10 19:31:01,289] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:31:01,312] {local_task_job.py:261} INFO - 4 downstream tasks scheduled from follow-on schedule check

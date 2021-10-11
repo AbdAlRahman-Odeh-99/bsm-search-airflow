@@ -1,0 +1,24 @@
+[2021-10-10 17:06:18,965] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_nested_branch_dag.branch_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:06:18,971] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_nested_branch_dag.branch_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:06:18,971] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:06:18,971] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2021-10-10 17:06:18,971] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:06:18,982] {taskinstance.py:1115} INFO - Executing <Task(BranchPythonOperator): branch_1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:06:18,983] {standard_task_runner.py:52} INFO - Started process 15874 to run task
+[2021-10-10 17:06:18,986] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'example_nested_branch_dag', 'branch_1', '2021-10-09T00:00:00+00:00', '--job-id', '47', '--pool', 'default_pool', '--raw', '--subdir', '/usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_nested_branch_dag.py', '--cfg-path', '/tmp/tmp1kgqb0xu', '--error-file', '/tmp/tmp7e6jvslj']
+[2021-10-10 17:06:18,987] {standard_task_runner.py:77} INFO - Job 47: Subtask branch_1
+[2021-10-10 17:06:19,051] {logging_mixin.py:109} INFO - Running <TaskInstance: example_nested_branch_dag.branch_1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:06:19,078] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=example_nested_branch_dag
+AIRFLOW_CTX_TASK_ID=branch_1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:06:19,078] {python.py:151} INFO - Done. Returned value was: true_1
+[2021-10-10 17:06:19,078] {skipmixin.py:124} INFO - Following branch true_1
+[2021-10-10 17:06:19,080] {skipmixin.py:155} INFO - Skipping tasks ['false_1']
+[2021-10-10 17:06:19,102] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=example_nested_branch_dag, task_id=branch_1, execution_date=20211009T000000, start_date=20211010T140618, end_date=20211010T140619
+[2021-10-10 17:06:19,118] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:06:19,176] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check

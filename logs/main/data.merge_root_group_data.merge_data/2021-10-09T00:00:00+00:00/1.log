@@ -1,0 +1,738 @@
+[2021-10-10 17:32:11,205] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:32:11,212] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:32:11,213] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:32:11,213] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 17:32:11,213] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:32:11,221] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): data.merge_root_group_data.merge_data> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:32:11,223] {standard_task_runner.py:52} INFO - Started process 22909 to run task
+[2021-10-10 17:32:11,227] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'data.merge_root_group_data.merge_data', '2021-10-09T00:00:00+00:00', '--job-id', '589', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp60o4xtxt', '--error-file', '/tmp/tmpqy6hkr7k']
+[2021-10-10 17:32:11,227] {standard_task_runner.py:77} INFO - Job 589: Subtask data.merge_root_group_data.merge_data
+[2021-10-10 17:32:11,246] {logging_mixin.py:109} INFO - Running <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:32:11,271] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=data.merge_root_group_data.merge_data
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:32:11,271] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 17:32:11,271] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            BASE_DIR=${base_dir}\n            BASE=${type}\n            END=${njobs}\n            INPUTS=""\n            for ((c=1;c<${END}+1;c++)); do\n                INPUTS="$INPUTS $(printf ${BASE_DIR}/${BASE}_${c}.root)"\n            done\n            echo Inputs: ${INPUTS}\n            source ${thisroot}/thisroot.sh\n            hadd -f ${BASE_DIR}/${BASE}.root ${INPUTS}\n            ']
+[2021-10-10 17:32:11,275] {subprocess.py:74} INFO - Output:
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + BASE_DIR=/home/abd/airflow/data/bsm-search
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + BASE=data
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + END=5
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + INPUTS=
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + (( c=1 ))
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root'
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 17:32:11,276] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root'
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root'
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 17:32:11,277] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root'
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root'
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - + echo Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 17:32:11,278] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:32:11,279] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 17:32:11,279] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:32:11,279] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 17:32:11,279] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 17:32:11,279] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,280] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 17:32:11,281] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 17:32:11,281] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,282] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 17:32:11,283] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 17:32:11,296] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 17:32:11,296] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 17:32:11,296] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 17:32:11,296] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 17:32:11,296] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 17:32:11,296] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 17:32:11,296] {subprocess.py:78} INFO - + hadd -f /home/abd/airflow/data/bsm-search/data.root /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 17:32:11,556] {subprocess.py:78} INFO - hadd Target file: /home/abd/airflow/data/bsm-search/data.root
+[2021-10-10 17:32:11,560] {subprocess.py:78} INFO - hadd compression setting for all output: 1
+[2021-10-10 17:32:11,608] {subprocess.py:78} INFO - hadd Source file 1: /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 17:32:11,631] {subprocess.py:78} INFO - hadd Source file 2: /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 17:32:11,631] {subprocess.py:78} INFO - hadd Source file 3: /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 17:32:11,632] {subprocess.py:78} INFO - hadd Source file 4: /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 17:32:11,632] {subprocess.py:78} INFO - hadd Source file 5: /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 17:32:11,632] {subprocess.py:78} INFO - hadd Target path: /home/abd/airflow/data/bsm-search/data.root:/
+[2021-10-10 17:32:11,696] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 17:32:11,707] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=data.merge_root_group_data.merge_data, execution_date=20211009T000000, start_date=20211010T143211, end_date=20211010T143211
+[2021-10-10 17:32:11,719] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:32:11,731] {local_task_job.py:261} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:36:50,867] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:36:50,872] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:36:50,872] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:36:50,873] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:36:50,873] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:36:50,882] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): data.merge_root_group_data.merge_data> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:36:50,884] {standard_task_runner.py:52} INFO - Started process 56499 to run task
+[2021-10-10 19:36:50,887] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'data.merge_root_group_data.merge_data', '2021-10-09T00:00:00+00:00', '--job-id', '589', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpchoa1aq3', '--error-file', '/tmp/tmps1vu1ff1']
+[2021-10-10 19:36:50,887] {standard_task_runner.py:77} INFO - Job 589: Subtask data.merge_root_group_data.merge_data
+[2021-10-10 19:36:50,908] {logging_mixin.py:109} INFO - Running <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:36:50,933] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=data.merge_root_group_data.merge_data
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:36:50,933] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:36:50,933] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            BASE_DIR=${base_dir}\n            BASE=${type}\n            END=${njobs}\n            INPUTS=""\n            for ((c=1;c<${END}+1;c++)); do\n                INPUTS="$INPUTS $(printf ${BASE_DIR}/${BASE}_${c}.root)"\n            done\n            echo Inputs: ${INPUTS}\n            source ${thisroot}/thisroot.sh\n            hadd -f ${BASE_DIR}/${BASE}.root ${INPUTS}\n            ']
+[2021-10-10 19:36:50,937] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + BASE_DIR=/home/abd/airflow/data/bsm-search
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + BASE=data
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + END=5
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + INPUTS=
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + (( c=1 ))
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root'
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root'
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:36:50,938] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root'
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root'
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root'
+[2021-10-10 19:36:50,939] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - + echo Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:36:50,940] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:36:50,941] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:36:50,941] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:36:50,941] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:36:50,941] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:36:50,941] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:36:50,941] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:36:50,941] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:36:50,942] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,942] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:36:50,942] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:36:50,942] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:36:50,943] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:36:50,944] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:36:50,954] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:36:50,954] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:36:50,954] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:36:50,954] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:36:50,954] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:36:50,954] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:36:50,954] {subprocess.py:78} INFO - + hadd -f /home/abd/airflow/data/bsm-search/data.root /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:36:51,213] {subprocess.py:78} INFO - hadd Target file: /home/abd/airflow/data/bsm-search/data.root
+[2021-10-10 19:36:51,217] {subprocess.py:78} INFO - hadd compression setting for all output: 1
+[2021-10-10 19:36:51,264] {subprocess.py:78} INFO - hadd Source file 1: /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 19:36:51,287] {subprocess.py:78} INFO - hadd Source file 2: /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 19:36:51,288] {subprocess.py:78} INFO - hadd Source file 3: /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 19:36:51,288] {subprocess.py:78} INFO - hadd Source file 4: /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 19:36:51,288] {subprocess.py:78} INFO - hadd Source file 5: /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:36:51,289] {subprocess.py:78} INFO - hadd Target path: /home/abd/airflow/data/bsm-search/data.root:/
+[2021-10-10 19:36:51,349] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:36:51,361] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=data.merge_root_group_data.merge_data, execution_date=20211009T000000, start_date=20211010T163650, end_date=20211010T163651
+[2021-10-10 19:36:51,379] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:36:51,414] {local_task_job.py:261} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:46:30,551] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:46:30,557] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:46:30,557] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:46:30,557] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:46:30,557] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:46:30,564] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): data.merge_root_group_data.merge_data> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:46:30,565] {standard_task_runner.py:52} INFO - Started process 59798 to run task
+[2021-10-10 19:46:30,568] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'data.merge_root_group_data.merge_data', '2021-10-09T00:00:00+00:00', '--job-id', '589', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp14fjsf6x', '--error-file', '/tmp/tmpb0wnnykf']
+[2021-10-10 19:46:30,569] {standard_task_runner.py:77} INFO - Job 589: Subtask data.merge_root_group_data.merge_data
+[2021-10-10 19:46:30,588] {logging_mixin.py:109} INFO - Running <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:46:30,611] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=data.merge_root_group_data.merge_data
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:46:30,612] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:46:30,612] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            BASE_DIR=${base_dir}\n            BASE=${type}\n            END=${njobs}\n            INPUTS=""\n            for ((c=1;c<${END}+1;c++)); do\n                INPUTS="$INPUTS $(printf ${BASE_DIR}/${BASE}_${c}.root)"\n            done\n            echo Inputs: ${INPUTS}\n            source ${thisroot}/thisroot.sh\n            hadd -f ${BASE_DIR}/${BASE}.root ${INPUTS}\n            ']
+[2021-10-10 19:46:30,616] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:46:30,616] {subprocess.py:78} INFO - + BASE_DIR=/home/abd/airflow/data/bsm-search
+[2021-10-10 19:46:30,616] {subprocess.py:78} INFO - + BASE=data
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + END=5
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + INPUTS=
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + (( c=1 ))
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root'
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root'
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:46:30,617] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root'
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root'
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root'
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + echo Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:46:30,618] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:46:30,619] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:46:30,619] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:46:30,619] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:46:30,619] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:46:30,619] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:46:30,620] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:46:30,621] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:46:30,622] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:46:30,623] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:46:30,623] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:46:30,623] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:46:30,632] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:46:30,632] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:46:30,632] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:46:30,632] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:46:30,632] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:46:30,632] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:46:30,632] {subprocess.py:78} INFO - + hadd -f /home/abd/airflow/data/bsm-search/data.root /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:46:30,895] {subprocess.py:78} INFO - hadd Target file: /home/abd/airflow/data/bsm-search/data.root
+[2021-10-10 19:46:30,900] {subprocess.py:78} INFO - hadd compression setting for all output: 1
+[2021-10-10 19:46:30,947] {subprocess.py:78} INFO - hadd Source file 1: /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 19:46:30,970] {subprocess.py:78} INFO - hadd Source file 2: /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 19:46:30,970] {subprocess.py:78} INFO - hadd Source file 3: /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 19:46:30,970] {subprocess.py:78} INFO - hadd Source file 4: /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 19:46:30,971] {subprocess.py:78} INFO - hadd Source file 5: /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:46:30,971] {subprocess.py:78} INFO - hadd Target path: /home/abd/airflow/data/bsm-search/data.root:/
+[2021-10-10 19:46:31,034] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:46:31,046] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=data.merge_root_group_data.merge_data, execution_date=20211009T000000, start_date=20211010T164630, end_date=20211010T164631
+[2021-10-10 19:46:31,061] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:46:31,073] {local_task_job.py:261} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:56:22,997] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:56:23,004] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:56:23,004] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:56:23,004] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:56:23,004] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:56:23,011] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): data.merge_root_group_data.merge_data> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:56:23,013] {standard_task_runner.py:52} INFO - Started process 63413 to run task
+[2021-10-10 19:56:23,016] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'data.merge_root_group_data.merge_data', '2021-10-09T00:00:00+00:00', '--job-id', '590', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmponwpc8t9', '--error-file', '/tmp/tmpmhfueer0']
+[2021-10-10 19:56:23,017] {standard_task_runner.py:77} INFO - Job 590: Subtask data.merge_root_group_data.merge_data
+[2021-10-10 19:56:23,040] {logging_mixin.py:109} INFO - Running <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:56:23,066] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=data.merge_root_group_data.merge_data
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:56:23,067] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:56:23,067] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            BASE_DIR=${base_dir}\n            BASE=${type}\n            END=${njobs}\n            INPUTS=""\n            for ((c=1;c<${END}+1;c++)); do\n                INPUTS="$INPUTS $(printf ${BASE_DIR}/${BASE}_${c}.root)"\n            done\n            echo Inputs: ${INPUTS}\n            source ${thisroot}/thisroot.sh\n            hadd -f ${BASE_DIR}/${BASE}.root ${INPUTS}\n            ']
+[2021-10-10 19:56:23,071] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:56:23,071] {subprocess.py:78} INFO - + BASE_DIR=/home/abd/airflow/data/bsm-search
+[2021-10-10 19:56:23,071] {subprocess.py:78} INFO - + BASE=data
+[2021-10-10 19:56:23,071] {subprocess.py:78} INFO - + END=5
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + INPUTS=
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + (( c=1 ))
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root'
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root'
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:56:23,072] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root'
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root'
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root'
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + echo Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:56:23,073] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:56:23,074] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:56:23,074] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:56:23,074] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:56:23,074] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:56:23,074] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,075] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:56:23,076] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:56:23,076] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:56:23,076] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,077] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:56:23,078] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:56:23,088] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:56:23,088] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:56:23,088] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:56:23,088] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:56:23,088] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:56:23,088] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:56:23,088] {subprocess.py:78} INFO - + hadd -f /home/abd/airflow/data/bsm-search/data.root /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:56:23,345] {subprocess.py:78} INFO - hadd Target file: /home/abd/airflow/data/bsm-search/data.root
+[2021-10-10 19:56:23,349] {subprocess.py:78} INFO - hadd compression setting for all output: 1
+[2021-10-10 19:56:23,397] {subprocess.py:78} INFO - hadd Source file 1: /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 19:56:23,420] {subprocess.py:78} INFO - hadd Source file 2: /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 19:56:23,420] {subprocess.py:78} INFO - hadd Source file 3: /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 19:56:23,420] {subprocess.py:78} INFO - hadd Source file 4: /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 19:56:23,421] {subprocess.py:78} INFO - hadd Source file 5: /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 19:56:23,421] {subprocess.py:78} INFO - hadd Target path: /home/abd/airflow/data/bsm-search/data.root:/
+[2021-10-10 19:56:23,483] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:56:23,494] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=data.merge_root_group_data.merge_data, execution_date=20211009T000000, start_date=20211010T165622, end_date=20211010T165623
+[2021-10-10 19:56:23,508] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:56:23,521] {local_task_job.py:261} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:17:55,256] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:17:55,264] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:17:55,264] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:17:55,264] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 20:17:55,264] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:17:55,271] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): data.merge_root_group_data.merge_data> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:17:55,272] {standard_task_runner.py:52} INFO - Started process 10730 to run task
+[2021-10-10 20:17:55,275] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'data.merge_root_group_data.merge_data', '2021-10-09T00:00:00+00:00', '--job-id', '591', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpns9tqbbb', '--error-file', '/tmp/tmp4xjvt_he']
+[2021-10-10 20:17:55,276] {standard_task_runner.py:77} INFO - Job 591: Subtask data.merge_root_group_data.merge_data
+[2021-10-10 20:17:55,294] {logging_mixin.py:109} INFO - Running <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:17:55,318] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=data.merge_root_group_data.merge_data
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:17:55,318] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:17:55,318] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            BASE_DIR=${base_dir}\n            BASE=${type}\n            END=${njobs}\n            INPUTS=""\n            for ((c=1;c<${END}+1;c++)); do\n                INPUTS="$INPUTS $(printf ${BASE_DIR}/${BASE}_${c}.root)"\n            done\n            echo Inputs: ${INPUTS}\n            source ${thisroot}/thisroot.sh\n            hadd -f ${BASE_DIR}/${BASE}.root ${INPUTS}\n            ']
+[2021-10-10 20:17:55,322] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + BASE_DIR=/home/abd/airflow/data/bsm-search
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + BASE=data
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + END=5
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + INPUTS=
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + (( c=1 ))
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root'
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:17:55,323] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root'
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root'
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root'
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:17:55,324] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root'
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - + echo Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:17:55,325] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:17:55,326] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:17:55,326] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:17:55,326] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:17:55,326] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:17:55,327] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:17:55,327] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:17:55,327] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:17:55,327] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:17:55,327] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,327] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:17:55,327] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,328] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:17:55,329] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:17:55,339] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:17:55,339] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:17:55,339] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:17:55,339] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:17:55,339] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:17:55,339] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:17:55,339] {subprocess.py:78} INFO - + hadd -f /home/abd/airflow/data/bsm-search/data.root /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:17:55,597] {subprocess.py:78} INFO - hadd Target file: /home/abd/airflow/data/bsm-search/data.root
+[2021-10-10 20:17:55,602] {subprocess.py:78} INFO - hadd compression setting for all output: 1
+[2021-10-10 20:17:55,649] {subprocess.py:78} INFO - hadd Source file 1: /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 20:17:55,671] {subprocess.py:78} INFO - hadd Source file 2: /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 20:17:55,672] {subprocess.py:78} INFO - hadd Source file 3: /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 20:17:55,672] {subprocess.py:78} INFO - hadd Source file 4: /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 20:17:55,672] {subprocess.py:78} INFO - hadd Source file 5: /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:17:55,673] {subprocess.py:78} INFO - hadd Target path: /home/abd/airflow/data/bsm-search/data.root:/
+[2021-10-10 20:17:55,735] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 20:17:55,746] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=data.merge_root_group_data.merge_data, execution_date=20211009T000000, start_date=20211010T171755, end_date=20211010T171755
+[2021-10-10 20:17:55,767] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 20:17:55,780] {local_task_job.py:261} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:37:18,119] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:37:18,128] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:37:18,128] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:37:18,128] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 20:37:18,129] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:37:18,135] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): data.merge_root_group_data.merge_data> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:37:18,137] {standard_task_runner.py:52} INFO - Started process 14952 to run task
+[2021-10-10 20:37:18,141] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'data.merge_root_group_data.merge_data', '2021-10-09T00:00:00+00:00', '--job-id', '591', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpixh12s6p', '--error-file', '/tmp/tmpvfy4vou4']
+[2021-10-10 20:37:18,142] {standard_task_runner.py:77} INFO - Job 591: Subtask data.merge_root_group_data.merge_data
+[2021-10-10 20:37:18,164] {logging_mixin.py:109} INFO - Running <TaskInstance: main.data.merge_root_group_data.merge_data 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:37:18,198] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=data.merge_root_group_data.merge_data
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:37:18,199] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:37:18,199] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            BASE_DIR=${base_dir}\n            BASE=${type}\n            END=${njobs}\n            INPUTS=""\n            for ((c=1;c<${END}+1;c++)); do\n                INPUTS="$INPUTS $(printf ${BASE_DIR}/${BASE}_${c}.root)"\n            done\n            echo Inputs: ${INPUTS}\n            source ${thisroot}/thisroot.sh\n            hadd -f ${BASE_DIR}/${BASE}.root ${INPUTS}\n            ']
+[2021-10-10 20:37:18,207] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:37:18,209] {subprocess.py:78} INFO - + BASE_DIR=/home/abd/airflow/data/bsm-search
+[2021-10-10 20:37:18,209] {subprocess.py:78} INFO - + BASE=data
+[2021-10-10 20:37:18,209] {subprocess.py:78} INFO - + END=5
+[2021-10-10 20:37:18,209] {subprocess.py:78} INFO - + INPUTS=
+[2021-10-10 20:37:18,209] {subprocess.py:78} INFO - + (( c=1 ))
+[2021-10-10 20:37:18,209] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:37:18,209] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 20:37:18,210] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root'
+[2021-10-10 20:37:18,210] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:37:18,210] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:37:18,210] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 20:37:18,210] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root'
+[2021-10-10 20:37:18,210] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:37:18,210] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:37:18,210] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 20:37:18,211] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root'
+[2021-10-10 20:37:18,211] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:37:18,211] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:37:18,211] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 20:37:18,211] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root'
+[2021-10-10 20:37:18,211] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:37:18,211] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:37:18,212] {subprocess.py:78} INFO - ++ printf /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:37:18,212] {subprocess.py:78} INFO - + INPUTS=' /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root'
+[2021-10-10 20:37:18,212] {subprocess.py:78} INFO - + (( c++ ))
+[2021-10-10 20:37:18,212] {subprocess.py:78} INFO - + (( c<5+1 ))
+[2021-10-10 20:37:18,212] {subprocess.py:78} INFO - + echo Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:37:18,212] {subprocess.py:78} INFO - Inputs: /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:37:18,212] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:37:18,213] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:37:18,213] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:37:18,213] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:37:18,213] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:37:18,213] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,214] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:37:18,215] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:37:18,215] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:37:18,216] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:37:18,217] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:37:18,219] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:37:18,229] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:37:18,229] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:37:18,229] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:37:18,229] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:37:18,229] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:37:18,229] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:37:18,229] {subprocess.py:78} INFO - + hadd -f /home/abd/airflow/data/bsm-search/data.root /home/abd/airflow/data/bsm-search/data_1.root /home/abd/airflow/data/bsm-search/data_2.root /home/abd/airflow/data/bsm-search/data_3.root /home/abd/airflow/data/bsm-search/data_4.root /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:37:18,518] {subprocess.py:78} INFO - hadd Target file: /home/abd/airflow/data/bsm-search/data.root
+[2021-10-10 20:37:18,524] {subprocess.py:78} INFO - hadd compression setting for all output: 1
+[2021-10-10 20:37:18,576] {subprocess.py:78} INFO - hadd Source file 1: /home/abd/airflow/data/bsm-search/data_1.root
+[2021-10-10 20:37:18,601] {subprocess.py:78} INFO - hadd Source file 2: /home/abd/airflow/data/bsm-search/data_2.root
+[2021-10-10 20:37:18,601] {subprocess.py:78} INFO - hadd Source file 3: /home/abd/airflow/data/bsm-search/data_3.root
+[2021-10-10 20:37:18,602] {subprocess.py:78} INFO - hadd Source file 4: /home/abd/airflow/data/bsm-search/data_4.root
+[2021-10-10 20:37:18,602] {subprocess.py:78} INFO - hadd Source file 5: /home/abd/airflow/data/bsm-search/data_5.root
+[2021-10-10 20:37:18,603] {subprocess.py:78} INFO - hadd Target path: /home/abd/airflow/data/bsm-search/data.root:/
+[2021-10-10 20:37:18,675] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 20:37:18,688] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=data.merge_root_group_data.merge_data, execution_date=20211009T000000, start_date=20211010T173718, end_date=20211010T173718
+[2021-10-10 20:37:18,713] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 20:37:18,729] {local_task_job.py:261} INFO - 2 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,552 @@
+[2021-10-10 17:32:48,445] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:32:48,451] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 17:32:48,451] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:32:48,451] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 17:32:48,451] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:32:48,459] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 17:32:48,460] {standard_task_runner.py:52} INFO - Started process 23547 to run task
+[2021-10-10 17:32:48,463] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1', '2021-10-09T00:00:00+00:00', '--job-id', '602', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpze0pfjym', '--error-file', '/tmp/tmp_xt7oz1c']
+[2021-10-10 17:32:48,464] {standard_task_runner.py:77} INFO - Job 602: Subtask mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+[2021-10-10 17:32:48,483] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 17:32:48,509] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 17:32:48,509] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 17:32:48,509] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh        \n            variations=$(echo ${variations}|sed \'s| |,|g\')\n            name="${type}_${shapevar}"\n            python ${code}/histogram.py ${base_dir}/${inputfile} ${base_dir}/${outputfile} ${type} ${weight} ${variations} ${name}\n            ']
+[2021-10-10 17:32:48,513] {subprocess.py:74} INFO - Output:
+[2021-10-10 17:32:48,514] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:32:48,514] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 17:32:48,514] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:32:48,514] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 17:32:48,514] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 17:32:48,515] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 17:32:48,515] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 17:32:48,515] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 17:32:48,515] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 17:32:48,516] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 17:32:48,516] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 17:32:48,516] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 17:32:48,516] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 17:32:48,516] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,516] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 17:32:48,516] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,517] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 17:32:48,518] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 17:32:48,528] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 17:32:48,528] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 17:32:48,528] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 17:32:48,528] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 17:32:48,528] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 17:32:48,528] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 17:32:48,529] {subprocess.py:78} INFO - ++ echo nominal
+[2021-10-10 17:32:48,529] {subprocess.py:78} INFO - ++ sed 's| |,|g'
+[2021-10-10 17:32:48,530] {subprocess.py:78} INFO - + variations=nominal
+[2021-10-10 17:32:48,530] {subprocess.py:78} INFO - + name=mc2_shape_conv_up
+[2021-10-10 17:32:48,530] {subprocess.py:78} INFO - + python /home/abd/airflow/code/histogram.py /home/abd/airflow/data/bsm-search/mc2_shape_conv_up.root /home/abd/airflow/data/bsm-search/mc2_shape_conv_up_hist.root mc2 0.0125 nominal mc2_shape_conv_up
+[2021-10-10 17:32:50,537] {subprocess.py:78} INFO - TH1F::Sumw2:0: RuntimeWarning: Sum of squares of weights structure already created
+[2021-10-10 17:32:50,591] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 17:32:50,606] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1, execution_date=20211009T000000, start_date=20211010T143248, end_date=20211010T143250
+[2021-10-10 17:32:50,639] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:32:50,651] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:37:25,967] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:37:25,974] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:37:25,974] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:37:25,974] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:37:25,974] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:37:25,983] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:37:25,984] {standard_task_runner.py:52} INFO - Started process 57160 to run task
+[2021-10-10 19:37:25,987] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1', '2021-10-09T00:00:00+00:00', '--job-id', '602', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpog1sl8ty', '--error-file', '/tmp/tmphvzlk6eq']
+[2021-10-10 19:37:25,988] {standard_task_runner.py:77} INFO - Job 602: Subtask mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+[2021-10-10 19:37:26,009] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:37:26,037] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:37:26,038] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:37:26,038] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh        \n            variations=$(echo ${variations}|sed \'s| |,|g\')\n            name="${type}_${shapevar}"\n            python ${code}/histogram.py ${base_dir}/${inputfile} ${base_dir}/${outputfile} ${type} ${weight} ${variations} ${name}\n            ']
+[2021-10-10 19:37:26,042] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:37:26,043] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:37:26,043] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:37:26,043] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:37:26,043] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:37:26,043] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:37:26,044] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:37:26,044] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:37:26,045] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:37:26,046] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:37:26,046] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:37:26,046] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:37:26,046] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:37:26,046] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:37:26,046] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:37:26,047] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:37:26,048] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:37:26,048] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:37:26,048] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:37:26,048] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:37:26,048] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:37:26,048] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:37:26,058] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:37:26,058] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:37:26,058] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:37:26,058] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:37:26,058] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:37:26,058] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:37:26,058] {subprocess.py:78} INFO - ++ echo nominal
+[2021-10-10 19:37:26,058] {subprocess.py:78} INFO - ++ sed 's| |,|g'
+[2021-10-10 19:37:26,060] {subprocess.py:78} INFO - + variations=nominal
+[2021-10-10 19:37:26,060] {subprocess.py:78} INFO - + name=mc2_shape_conv_up
+[2021-10-10 19:37:26,060] {subprocess.py:78} INFO - + python /home/abd/airflow/code/histogram.py /home/abd/airflow/data/bsm-search/mc2_shape_conv_up.root /home/abd/airflow/data/bsm-search/mc2_shape_conv_up_hist.root mc2 0.0125 nominal mc2_shape_conv_up
+[2021-10-10 19:37:28,213] {subprocess.py:78} INFO - TH1F::Sumw2:0: RuntimeWarning: Sum of squares of weights structure already created
+[2021-10-10 19:37:28,270] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:37:28,284] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1, execution_date=20211009T000000, start_date=20211010T163725, end_date=20211010T163728
+[2021-10-10 19:37:28,324] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:37:28,349] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:47:05,340] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:47:05,346] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:47:05,346] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:47:05,346] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:47:05,346] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:47:05,355] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:47:05,356] {standard_task_runner.py:52} INFO - Started process 60393 to run task
+[2021-10-10 19:47:05,359] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1', '2021-10-09T00:00:00+00:00', '--job-id', '602', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp_myz6gjk', '--error-file', '/tmp/tmp53y12f9e']
+[2021-10-10 19:47:05,359] {standard_task_runner.py:77} INFO - Job 602: Subtask mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+[2021-10-10 19:47:05,380] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:47:05,406] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:47:05,406] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:47:05,406] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh        \n            variations=$(echo ${variations}|sed \'s| |,|g\')\n            name="${type}_${shapevar}"\n            python ${code}/histogram.py ${base_dir}/${inputfile} ${base_dir}/${outputfile} ${type} ${weight} ${variations} ${name}\n            ']
+[2021-10-10 19:47:05,410] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:47:05,411] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:47:05,411] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:47:05,411] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:47:05,411] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:47:05,411] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:47:05,411] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:47:05,412] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:47:05,412] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:47:05,412] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:47:05,412] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:47:05,413] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:47:05,413] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:47:05,413] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:47:05,413] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,413] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:47:05,413] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:47:05,413] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,414] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:47:05,415] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:47:05,425] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:47:05,425] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:47:05,425] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:47:05,425] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:47:05,425] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:47:05,425] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:47:05,425] {subprocess.py:78} INFO - ++ echo nominal
+[2021-10-10 19:47:05,426] {subprocess.py:78} INFO - ++ sed 's| |,|g'
+[2021-10-10 19:47:05,427] {subprocess.py:78} INFO - + variations=nominal
+[2021-10-10 19:47:05,427] {subprocess.py:78} INFO - + name=mc2_shape_conv_up
+[2021-10-10 19:47:05,427] {subprocess.py:78} INFO - + python /home/abd/airflow/code/histogram.py /home/abd/airflow/data/bsm-search/mc2_shape_conv_up.root /home/abd/airflow/data/bsm-search/mc2_shape_conv_up_hist.root mc2 0.0125 nominal mc2_shape_conv_up
+[2021-10-10 19:47:07,225] {subprocess.py:78} INFO - TH1F::Sumw2:0: RuntimeWarning: Sum of squares of weights structure already created
+[2021-10-10 19:47:07,278] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:47:07,289] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1, execution_date=20211009T000000, start_date=20211010T164705, end_date=20211010T164707
+[2021-10-10 19:47:07,335] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:47:07,346] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 19:56:58,355] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:56:58,362] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 19:56:58,362] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:56:58,362] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 19:56:58,362] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 19:56:58,370] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 19:56:58,371] {standard_task_runner.py:52} INFO - Started process 64028 to run task
+[2021-10-10 19:56:58,374] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1', '2021-10-09T00:00:00+00:00', '--job-id', '603', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp0nreod5c', '--error-file', '/tmp/tmp8p8j2xlq']
+[2021-10-10 19:56:58,375] {standard_task_runner.py:77} INFO - Job 603: Subtask mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+[2021-10-10 19:56:58,394] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 19:56:58,423] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 19:56:58,424] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 19:56:58,424] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh        \n            variations=$(echo ${variations}|sed \'s| |,|g\')\n            name="${type}_${shapevar}"\n            python ${code}/histogram.py ${base_dir}/${inputfile} ${base_dir}/${outputfile} ${type} ${weight} ${variations} ${name}\n            ']
+[2021-10-10 19:56:58,428] {subprocess.py:74} INFO - Output:
+[2021-10-10 19:56:58,428] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:56:58,429] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:56:58,429] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:56:58,429] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:56:58,429] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 19:56:58,429] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 19:56:58,430] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 19:56:58,430] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 19:56:58,430] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 19:56:58,430] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 19:56:58,430] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 19:56:58,430] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 19:56:58,431] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 19:56:58,431] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,431] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 19:56:58,431] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 19:56:58,432] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 19:56:58,433] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 19:56:58,443] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 19:56:58,443] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 19:56:58,443] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 19:56:58,443] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 19:56:58,443] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 19:56:58,443] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 19:56:58,443] {subprocess.py:78} INFO - ++ echo nominal
+[2021-10-10 19:56:58,443] {subprocess.py:78} INFO - ++ sed 's| |,|g'
+[2021-10-10 19:56:58,445] {subprocess.py:78} INFO - + variations=nominal
+[2021-10-10 19:56:58,445] {subprocess.py:78} INFO - + name=mc2_shape_conv_up
+[2021-10-10 19:56:58,445] {subprocess.py:78} INFO - + python /home/abd/airflow/code/histogram.py /home/abd/airflow/data/bsm-search/mc2_shape_conv_up.root /home/abd/airflow/data/bsm-search/mc2_shape_conv_up_hist.root mc2 0.0125 nominal mc2_shape_conv_up
+[2021-10-10 19:57:00,273] {subprocess.py:78} INFO - TH1F::Sumw2:0: RuntimeWarning: Sum of squares of weights structure already created
+[2021-10-10 19:57:00,326] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 19:57:00,338] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1, execution_date=20211009T000000, start_date=20211010T165658, end_date=20211010T165700
+[2021-10-10 19:57:00,351] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 19:57:00,361] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:18:30,077] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:18:30,083] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:18:30,083] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:18:30,084] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 20:18:30,084] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:18:30,091] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:18:30,093] {standard_task_runner.py:52} INFO - Started process 11325 to run task
+[2021-10-10 20:18:30,095] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1', '2021-10-09T00:00:00+00:00', '--job-id', '604', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp4m8xcpxl', '--error-file', '/tmp/tmp8wq3v_yp']
+[2021-10-10 20:18:30,096] {standard_task_runner.py:77} INFO - Job 604: Subtask mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+[2021-10-10 20:18:30,115] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:18:30,153] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:18:30,153] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:18:30,154] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh        \n            variations=$(echo ${variations}|sed \'s| |,|g\')\n            name="${type}_${shapevar}"\n            python ${code}/histogram.py ${base_dir}/${inputfile} ${base_dir}/${outputfile} ${type} ${weight} ${variations} ${name}\n            ']
+[2021-10-10 20:18:30,158] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:18:30,158] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:18:30,159] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:18:30,159] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:18:30,159] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:18:30,159] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:18:30,159] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:18:30,160] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,161] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:18:30,162] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:18:30,163] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:18:30,163] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:18:30,172] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:18:30,172] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:18:30,172] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:18:30,172] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:18:30,172] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:18:30,172] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:18:30,173] {subprocess.py:78} INFO - ++ echo nominal
+[2021-10-10 20:18:30,173] {subprocess.py:78} INFO - ++ sed 's| |,|g'
+[2021-10-10 20:18:30,174] {subprocess.py:78} INFO - + variations=nominal
+[2021-10-10 20:18:30,174] {subprocess.py:78} INFO - + name=mc2_shape_conv_up
+[2021-10-10 20:18:30,174] {subprocess.py:78} INFO - + python /home/abd/airflow/code/histogram.py /home/abd/airflow/data/bsm-search/mc2_shape_conv_up.root /home/abd/airflow/data/bsm-search/mc2_shape_conv_up_hist.root mc2 0.0125 nominal mc2_shape_conv_up
+[2021-10-10 20:18:32,005] {subprocess.py:78} INFO - TH1F::Sumw2:0: RuntimeWarning: Sum of squares of weights structure already created
+[2021-10-10 20:18:32,067] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 20:18:32,078] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1, execution_date=20211009T000000, start_date=20211010T171830, end_date=20211010T171832
+[2021-10-10 20:18:32,112] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 20:18:32,125] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-10-10 20:37:54,031] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:37:54,038] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [queued]>
+[2021-10-10 20:37:54,038] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:37:54,038] {taskinstance.py:1096} INFO - Starting attempt 1 of 2
+[2021-10-10 20:37:54,038] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 20:37:54,045] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1> on 2021-10-09T00:00:00+00:00
+[2021-10-10 20:37:54,046] {standard_task_runner.py:52} INFO - Started process 15570 to run task
+[2021-10-10 20:37:54,049] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'main', 'mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1', '2021-10-09T00:00:00+00:00', '--job-id', '604', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpn30e30l5', '--error-file', '/tmp/tmpwd4qojkg']
+[2021-10-10 20:37:54,049] {standard_task_runner.py:77} INFO - Job 604: Subtask mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+[2021-10-10 20:37:54,069] {logging_mixin.py:109} INFO - Running <TaskInstance: main.mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1 2021-10-09T00:00:00+00:00 [running]> on host abd
+[2021-10-10 20:37:54,094] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=main
+AIRFLOW_CTX_TASK_ID=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T00:00:00+00:00
+[2021-10-10 20:37:54,095] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2021-10-10 20:37:54,095] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\n            set -x\n            source ${thisroot}/thisroot.sh        \n            variations=$(echo ${variations}|sed \'s| |,|g\')\n            name="${type}_${shapevar}"\n            python ${code}/histogram.py ${base_dir}/${inputfile} ${base_dir}/${outputfile} ${type} ${weight} ${variations} ${name}\n            ']
+[2021-10-10 20:37:54,099] {subprocess.py:74} INFO - Output:
+[2021-10-10 20:37:54,099] {subprocess.py:78} INFO - + source /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:37:54,100] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:37:54,100] {subprocess.py:78} INFO - ++ SOURCE=/home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:37:54,100] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:37:54,100] {subprocess.py:78} INFO - ++ '[' x/home/abd/root/root/bin/thisroot.sh = x ']'
+[2021-10-10 20:37:54,100] {subprocess.py:78} INFO - +++ dirname /home/abd/root/root/bin/thisroot.sh
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - ++ thisroot=/home/abd/root/root/bin
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - +++ cd /home/abd/root/root/bin/..
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - +++ pwd
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - ++ ROOTSYS=/home/abd/root/root
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - ++ export ROOTSYS
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - ++ clean_environment
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - ++ '[' -n '' ']'
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - ++ command -v manpath
+[2021-10-10 20:37:54,101] {subprocess.py:78} INFO - +++ manpath
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - manpath: warning: $PATH not set
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ default_manpath=/usr/share/man:/usr/local/share/man
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ set_environment
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ '[' -z /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ PATH=/home/abd/root/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ export PATH
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ LD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ export LD_LIBRARY_PATH
+[2021-10-10 20:37:54,102] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ DYLD_LIBRARY_PATH=/home/abd/root/root/lib
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export DYLD_LIBRARY_PATH
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ SHLIB_PATH=/home/abd/root/root/lib
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export SHLIB_PATH
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ LIBPATH=/home/abd/root/root/lib
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export LIBPATH
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ PYTHONPATH=/home/abd/root/root/lib
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export PYTHONPATH
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ MANPATH=/home/abd/root/root/man:/usr/share/man:/usr/local/share/man
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export MANPATH
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ CMAKE_PREFIX_PATH=/home/abd/root/root
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export CMAKE_PREFIX_PATH
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ JUPYTER_PATH=/home/abd/root/root/etc/notebook
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export JUPYTER_PATH
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ '[' -z '' ']'
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ JUPYTER_CONFIG_DIR=/home/abd/root/root/etc/notebook
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export JUPYTER_CONFIG_DIR
+[2021-10-10 20:37:54,103] {subprocess.py:78} INFO - ++ export CLING_STANDARD_PCH=none
+[2021-10-10 20:37:54,104] {subprocess.py:78} INFO - ++ CLING_STANDARD_PCH=none
+[2021-10-10 20:37:54,104] {subprocess.py:78} INFO - +++ root-config --arch
+[2021-10-10 20:37:54,104] {subprocess.py:78} INFO - +++ grep -v win32gcc
+[2021-10-10 20:37:54,104] {subprocess.py:78} INFO - +++ grep -i win32
+[2021-10-10 20:37:54,113] {subprocess.py:78} INFO - ++ '[' x '!=' x ']'
+[2021-10-10 20:37:54,113] {subprocess.py:78} INFO - ++ unset old_rootsys
+[2021-10-10 20:37:54,113] {subprocess.py:78} INFO - ++ unset thisroot
+[2021-10-10 20:37:54,113] {subprocess.py:78} INFO - ++ unset -f drop_from_path
+[2021-10-10 20:37:54,113] {subprocess.py:78} INFO - ++ unset -f clean_environment
+[2021-10-10 20:37:54,113] {subprocess.py:78} INFO - ++ unset -f set_environment
+[2021-10-10 20:37:54,114] {subprocess.py:78} INFO - ++ echo nominal
+[2021-10-10 20:37:54,114] {subprocess.py:78} INFO - ++ sed 's| |,|g'
+[2021-10-10 20:37:54,115] {subprocess.py:78} INFO - + variations=nominal
+[2021-10-10 20:37:54,115] {subprocess.py:78} INFO - + name=mc2_shape_conv_up
+[2021-10-10 20:37:54,115] {subprocess.py:78} INFO - + python /home/abd/airflow/code/histogram.py /home/abd/airflow/data/bsm-search/mc2_shape_conv_up.root /home/abd/airflow/data/bsm-search/mc2_shape_conv_up_hist.root mc2 0.0125 nominal mc2_shape_conv_up
+[2021-10-10 20:37:55,989] {subprocess.py:78} INFO - TH1F::Sumw2:0: RuntimeWarning: Sum of squares of weights structure already created
+[2021-10-10 20:37:56,049] {subprocess.py:82} INFO - Command exited with return code 0
+[2021-10-10 20:37:56,061] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=main, task_id=mc.mc2.hist_shape_group_mc2.hist_shape_mc2_1, execution_date=20211009T000000, start_date=20211010T173754, end_date=20211010T173756
+[2021-10-10 20:37:56,106] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 20:37:56,136] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

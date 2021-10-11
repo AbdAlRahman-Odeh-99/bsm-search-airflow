@@ -1,0 +1,23 @@
+[2021-10-10 17:15:08,719] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_passing_params_via_test_command.run_this 2021-10-09T01:31:00+00:00 [queued]>
+[2021-10-10 17:15:08,724] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: example_passing_params_via_test_command.run_this 2021-10-09T01:31:00+00:00 [queued]>
+[2021-10-10 17:15:08,724] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:15:08,724] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2021-10-10 17:15:08,724] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2021-10-10 17:15:08,731] {taskinstance.py:1115} INFO - Executing <Task(PythonOperator): run_this> on 2021-10-09T01:31:00+00:00
+[2021-10-10 17:15:08,732] {standard_task_runner.py:52} INFO - Started process 18899 to run task
+[2021-10-10 17:15:08,735] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'example_passing_params_via_test_command', 'run_this', '2021-10-09T01:31:00+00:00', '--job-id', '524', '--pool', 'default_pool', '--raw', '--subdir', '/usr/local/lib/python3.8/dist-packages/airflow/example_dags/example_passing_params_via_test_command.py', '--cfg-path', '/tmp/tmpvyf7bda8', '--error-file', '/tmp/tmp8g7ae14b']
+[2021-10-10 17:15:08,736] {standard_task_runner.py:77} INFO - Job 524: Subtask run_this
+[2021-10-10 17:15:08,756] {logging_mixin.py:109} INFO - Running <TaskInstance: example_passing_params_via_test_command.run_this 2021-10-09T01:31:00+00:00 [running]> on host abd
+[2021-10-10 17:15:08,786] {taskinstance.py:1252} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=example_passing_params_via_test_command
+AIRFLOW_CTX_TASK_ID=run_this
+AIRFLOW_CTX_EXECUTION_DATE=2021-10-09T01:31:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-10-09T01:31:00+00:00
+[2021-10-10 17:15:08,787] {logging_mixin.py:109} INFO -  'miff' was passed in via task params = agg
+[2021-10-10 17:15:08,787] {python.py:151} INFO - Done. Returned value was: 1
+[2021-10-10 17:15:08,795] {taskinstance.py:1212} INFO - Marking task as SUCCESS. dag_id=example_passing_params_via_test_command, task_id=run_this, execution_date=20211009T013100, start_date=20211010T141508, end_date=20211010T141508
+[2021-10-10 17:15:08,826] {local_task_job.py:151} INFO - Task exited with return code 0
+[2021-10-10 17:15:08,865] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check
